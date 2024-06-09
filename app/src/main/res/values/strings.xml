@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">baby_cry_Identfication</string>
+    <string name="app_name2">Angel Tears</string>
+    <string name="Login">Login</string>
+    <string name="Sign_up">Sign Up</string>
+    <string name="notParent">Not a Parent ? Login as </string>
+    <string name="notgurdian">Not a Gurdian ? Login as </string>
+    <string name="Parent">Parent</string>
+    <string name="Gurdian">Gurdian</string>
+    <string name="secoundSlogen">keeping your baby safe
+and cared for. so you can relax </string>
+    <string name="LoginParent"> Login as Parent</string>
+    <string name="LoginGaurdian"> Login as gurdian</string>
+    <string name="story1EN">The Stubborn Baby Elephant</string>
+    <string name="story1Ar">الفيل الصغير العنيد </string>
+    <string name="sleepnoiseEN">sleep noise</string>
+    <string name="ForgetPassword">Forget Password? </string>
+    <string name="StopAlert">Stop AlERT </string>
+
+
+
+
+</resources>

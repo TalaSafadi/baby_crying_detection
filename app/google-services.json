@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "569988677855",
+    "firebase_url": "https://babycryalertidentfication-default-rtdb.firebaseio.com",
+    "project_id": "babycryalertidentfication",
+    "storage_bucket": "babycryalertidentfication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569988677855:android:0da992983506cf5d1be96a",
+        "android_client_info": {
+          "package_name": "com.example.baby_cry_identfication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADP2CgWg3509-_a56aqeuO_VVBrYkBchU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
