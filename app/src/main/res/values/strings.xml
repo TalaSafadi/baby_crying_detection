@@ -16,8 +16,7 @@ and cared for. so you can relax </string>
     <string name="sleepnoiseEN">sleep noise</string>
     <string name="ForgetPassword">Forget Password? </string>
     <string name="StopAlert">Stop AlERT </string>
-
-
+    <string name="listen">listen </string>
 
 
 </resources>

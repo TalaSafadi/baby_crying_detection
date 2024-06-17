@@ -17,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class RegisterParent_page extends AppCompatActivity {
 
     private EditText userName, loginEmail, phoneNumber, password;
@@ -60,7 +63,7 @@ public class RegisterParent_page extends AppCompatActivity {
         String password = this.password.getText().toString().trim();
         String number = this.phoneNumber.getText().toString().trim();
         boolean verfied = this.Verfied.isChecked();
-        String imageUrl = "no image";
+        //String imageUrl = "no image";
 
         if (userName.isEmpty() || email.isEmpty() || password.isEmpty() || number.isEmpty()) {
             Toast.makeText(RegisterParent_page.this, "Please fill all fields.", Toast.LENGTH_SHORT).show();
@@ -70,7 +73,8 @@ public class RegisterParent_page extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Parent user = new Parent(userName, email, password, number, false, verfied, imageUrl);
+                        ArrayList <String> sleep = new ArrayList<>();
+                        Parent user = new Parent(userName, email, number, false ,sleep);
                         FirebaseFirestore.getInstance().collection("Parents").document(email).set(user)
                                 .addOnSuccessListener(documentReference -> {
                                   //  Log.d("RegisterParent_page77777", "DocumentSnapshot added with ID: " + documentReference.getId());

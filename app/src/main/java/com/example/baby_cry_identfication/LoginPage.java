@@ -47,7 +47,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadData();
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.activity_login_page_kid);
         UserEmail = findViewById(R.id.LoginEmailAdress);
         userPassword = findViewById(R.id.LoginPassword);
         LOGIN = findViewById(R.id.loginButton);
@@ -61,6 +61,8 @@ public class LoginPage extends AppCompatActivity {
             Intent intent = new Intent(LoginPage.this, RegisterParent_page.class);
             startActivity(intent);
         });
+
+        // Initialize biometric prompt and prompt info
         createBiometricPrompt();
         createPromptInfo();
 
@@ -81,7 +83,7 @@ public class LoginPage extends AppCompatActivity {
         loadData();
 
         if (flag) {
-            Intent intent = new Intent(LoginPage.this, MainActivity.class);
+            Intent intent = new Intent(LoginPage.this, SleepTrackerActivity.class);
             startActivity(intent);
         }
         if (emailsave != null) {
@@ -89,9 +91,6 @@ public class LoginPage extends AppCompatActivity {
                 Log.d(TAG, "Fingerprint button clicked");
                 showBiometricPrompt();
             });
-        } else {
-            Log.d(TAG, "No email saved, hiding fingerprint button");
-            //fingerprint.setVisibility(View.GONE);
         }
     }
 
@@ -103,7 +102,7 @@ public class LoginPage extends AppCompatActivity {
             public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 Log.d(TAG, "Authentication succeeded");
-                Intent intent = new Intent(LoginPage.this, AudioPlayerActivity.class);
+                Intent intent = new Intent(LoginPage.this,VoiceRecorder.class);
                 finish();
                 startActivity(intent);
             }

@@ -1,18 +1,20 @@
 package com.example.baby_cry_identfication;
 
+import java.util.ArrayList;
+
 public class Parent {
     protected String UserName, Email, Password , Number , imageUrl;
     protected boolean rememberMe_flage,verified_flage;
+    protected ArrayList<String>sleep;
 
 
-    public Parent(String userName, String email, String password, String number, boolean rememberMe_flage, boolean verified_flage, String imageUrl) {
+    public Parent(String userName, String email, String number, boolean rememberMe_flage,ArrayList<String> sleep) {
         UserName = userName;
         Email = email;
-        Password = password;
         Number = number;
         this.rememberMe_flage = rememberMe_flage;
-        this.verified_flage = verified_flage;
-        this.imageUrl = imageUrl;
+        this.sleep = sleep;
+        //this.imageUrl = imageUrl;
     }
 
     public String getImageUrl() {

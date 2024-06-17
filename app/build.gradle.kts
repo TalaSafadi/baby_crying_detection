@@ -51,5 +51,9 @@ dependencies {
     implementation("androidx.biometric:biometric:1.1.0")
     implementation("com.squareup.picasso:picasso:2.8")
     implementation ("com.google.firebase:firebase-firestore:25.0.0")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.0.3")
+
+
 
 }

@@ -1,15 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VoiceRecorder">
 
     <Button
-        android:id="@+id/recordButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/startRecordingButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Record"
-        android:layout_centerInParent="true"
-        android:onClick="onRecordButtonClick"/>
+        android:text="Start Recording"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/stopRecordingButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Stop Recording"
+        app:layout_constraintTop_toBottomOf="@id/startRecordingButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
