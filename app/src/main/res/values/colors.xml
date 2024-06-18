@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="extra_white">#FEFDFD</color>
+    <color name="transparant_white">#33EFE7E7</color>
     <color name="light_purple">#D9B9FF</color>
     <color name="Dark_purple">#A07DC9</color>
     <color name="purple_white">#F2E6FF</color>
@@ -10,6 +12,13 @@
     <color name="redAlert">#F44336</color>
     <color name="dark_pink">#FF8C8C</color>
     <color name="light_blue">#E4EEFD</color>
+    <color name="bright_blue">#CB50E9FD</color>
+    <color name="gold_yellow">#F6BC33</color>
+    <color name="light_yellow">#BFF6BC33</color>
+    <color name="semi_transparent_grey">#A0CCCCCC</color>
+    <color name="purple">#8F328F</color>
+
+
 
 
 

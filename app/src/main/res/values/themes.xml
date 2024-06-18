@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.Baby_cry_Identfication" parent="Base.Theme.Baby_cry_Identfication" />
+    <style name="TransparentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_purple"
+    android:background="@color/light_blue"
     android:orientation="vertical"
     tools:context=".AudioPlayerActivity">
 
@@ -12,6 +12,6 @@
         android:id="@+id/ShowsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_purple" />
+        android:background="@color/light_blue" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

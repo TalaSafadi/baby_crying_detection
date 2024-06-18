@@ -3,8 +3,8 @@ package com.example.baby_cry_identfication;
 import java.util.ArrayList;
 
 public class Parent {
-    protected String UserName, Email, Password , Number , imageUrl;
-    protected boolean rememberMe_flage,verified_flage;
+    protected String UserName, Email , Number ;
+    protected boolean rememberMe_flage;
     protected ArrayList<String>sleep;
 
 
@@ -17,21 +17,8 @@ public class Parent {
         //this.imageUrl = imageUrl;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 
-    public boolean isVerified_flage() {
-        return verified_flage;
-    }
-
-    public void setVerified_flage(boolean verified_flage) {
-        this.verified_flage = verified_flage;
-    }
 
     public String getUserName() {
         return UserName;
@@ -49,13 +36,7 @@ public class Parent {
         Email = email;
     }
 
-    public String getPassword() {
-        return Password;
-    }
 
-    public void setPassword(String password) {
-        Password = password;
-    }
 
     public String getNumber() {
         return Number;

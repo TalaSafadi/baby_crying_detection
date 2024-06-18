@@ -120,7 +120,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/ConfirmPassword"
+                android:id="@+id/EmergenyContact"
                 android:layout_width="363dp"
                 android:layout_height="51dp"
                 android:inputType="text" />

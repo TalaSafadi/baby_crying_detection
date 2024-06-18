@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -36,9 +37,9 @@ public class AudioPlayerActivity extends AppCompatActivity {
         ShowsList.setAdapter(adaptor);
 
 
-        SList.add(new Media("Show 1", "Description 1", R.drawable.img_1, R.raw.lullaby));
-        SList.add(new Media("Show 2", "Description 2", R.drawable.img_1, R.raw.lullaby2));
-        SList.add(new Media("Show 3", "Description 3", R.drawable.img_1,R.raw.story1));
+        SList.add(new Media("Show 1", "Description 1", R.drawable.dinoicon1, R.raw.lullaby,"En"));
+        SList.add(new Media("Show 2", "Description 2", R.drawable.home_dino, R.raw.lullaby2,"En"));
+        SList.add(new Media("Show 3", "Description 3", R.drawable.dino_egg,R.raw.story1,"Ar"));
 
         adaptor.notifyDataSetChanged();
     }
@@ -73,6 +74,9 @@ public class AudioPlayerActivity extends AppCompatActivity {
             ImageView Poster = row.findViewById(R.id.audioImage);
             ImageButton playButton = row.findViewById(R.id.AudioButton);
             playButton.setImageResource(android.R.drawable.ic_media_play);
+            Button language = row.findViewById(R.id.languageButton);
+            language.setText(SList.get(position).getLanguage());
+
 
             Media show = SList.get(position);
 
@@ -111,15 +115,19 @@ public class AudioPlayerActivity extends AppCompatActivity {
 // Assuming you have a Shows class defined as below:
 class Media {
     private String title;
-    private String description;
+    private String description ,language;;
     private int poster;
     private int audioUrl;
 
-    Media(String title, String description, int poster, int audioUrl) {
+
+    Media(String title, String description, int poster, int audioUrl , String language) {
         this.title = title;
         this.description = description;
         this.poster = poster;
         this.audioUrl = audioUrl;
+
+        this.language = language;
+
     }
 
     String getTitle() {
@@ -136,5 +144,15 @@ class Media {
 
     int getAudioUrl() {
         return audioUrl;
+    }
+
+
+
+    String getLanguage() {
+        return language;
+    }
+
+    void setLanguage(String language) {
+        this.language = language;
     }
 }

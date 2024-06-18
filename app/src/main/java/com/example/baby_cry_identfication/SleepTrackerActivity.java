@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,11 +19,13 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,31 +34,35 @@ import java.util.Locale;
 
 public class SleepTrackerActivity extends AppCompatActivity {
 
-    private EditText dateInput;
-    private EditText sleepHoursInput;
+    private EditText goingToSleepInput;
+    private EditText wakingUpInput;
     private Button dateButton;
     private Button addButton;
     private LineChart sleepChart;
     private FirebaseFirestore db;
     private String userEmail;
     private List<String> sleepDates;
+    private TextView sleepDuration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sleep_tracker);
+        setContentView(R.layout.activity_sleep_tracker_improve);
 
-        dateInput = findViewById(R.id.dateInput);
-        sleepHoursInput = findViewById(R.id.sleepHoursInput);
-        dateButton = findViewById(R.id.dateButton);
-        addButton = findViewById(R.id.addButton);
+        // Initialize the UI components
+        goingToSleepInput = findViewById(R.id.going_to_sleep);
+        wakingUpInput = findViewById(R.id.wakingUp);
+        dateButton = findViewById(R.id.dateButton2);
+        addButton = findViewById(R.id.addButton2);
         sleepChart = findViewById(R.id.sleepChart);
+        sleepDuration = findViewById(R.id.sleepTime);
         db = FirebaseFirestore.getInstance();
 
         // Retrieve the user's email from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
         userEmail = sharedPreferences.getString("email", null);
 
+        // Set click listeners
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +90,7 @@ public class SleepTrackerActivity extends AppCompatActivity {
                         calendar.set(Calendar.MONTH, month);
                         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd", Locale.getDefault());
-                        dateInput.setText(dateFormat.format(calendar.getTime()));
+                        dateButton.setText(dateFormat.format(calendar.getTime()));
                     }
                 },
                 calendar.get(Calendar.YEAR),
@@ -94,9 +101,11 @@ public class SleepTrackerActivity extends AppCompatActivity {
     }
 
     private void addSleepData() {
-        String date = dateInput.getText().toString();
-        String sleepHours = sleepHoursInput.getText().toString();
-        if (userEmail != null && !date.isEmpty() && !sleepHours.isEmpty()) {
+        String date = dateButton.getText().toString();
+        String goingToSleep = goingToSleepInput.getText().toString();
+        String wakingUp = wakingUpInput.getText().toString();
+
+        if (userEmail != null && !date.isEmpty() && !goingToSleep.isEmpty() && !wakingUp.isEmpty()) {
             db.collection("Parents").document(userEmail).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -106,21 +115,25 @@ public class SleepTrackerActivity extends AppCompatActivity {
                         if (sleepData == null) {
                             sleepData = new ArrayList<>();
                         }
-                        sleepData.add(date + ", " + sleepHours + " hours");
+                        sleepData.add(date + ", " + goingToSleep + " to " + wakingUp);
 
                         db.collection("Parents").document(userEmail)
                                 .update("sleep", sleepData)
-                                .addOnSuccessListener(aVoid -> loadSleepData())
+                                .addOnSuccessListener(aVoid -> {
+                                    loadSleepData();
+                                })
                                 .addOnFailureListener(e -> e.printStackTrace());
                     }
                 }
             });
         } else {
-            Toast.makeText(SleepTrackerActivity.this, "Please enter both date and hours of sleep", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SleepTrackerActivity.this, "Please enter date, going to sleep time, and waking up time", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void loadSleepData() {
+        sleepDuration.setText(" sleep duration");
+
         if (userEmail != null) {
             db.collection("Parents").document(userEmail)
                     .get()
@@ -137,9 +150,12 @@ public class SleepTrackerActivity extends AppCompatActivity {
                                         String[] parts = sleepData.get(i).split(", ");
                                         if (parts.length == 2) {
                                             String date = parts[0];
-                                            float hours = Float.parseFloat(parts[1].replace(" hours", ""));
-                                            entries.add(new Entry(i, hours));
-                                            sleepDates.add(date);
+                                            String[] times = parts[1].split(" to ");
+                                            if (times.length == 2) {
+                                                float sleepHours = calculateSleepHours(times[0], times[1]);
+                                                entries.add(new Entry(i, sleepHours));
+                                                sleepDates.add(date);
+                                            }
                                         }
                                     }
                                     displayChart(entries);
@@ -150,8 +166,60 @@ public class SleepTrackerActivity extends AppCompatActivity {
         }
     }
 
+    private float calculateSleepHours(String goingToSleep, String wakingUp) {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        try {
+            // Parse the times
+            long sleepTimeMillis = format.parse(goingToSleep).getTime();
+            long wakeTimeMillis = format.parse(wakingUp).getTime();
+
+            // Calculate the duration in milliseconds
+            long durationMillis;
+            if (wakeTimeMillis >= sleepTimeMillis) {
+                durationMillis = wakeTimeMillis - sleepTimeMillis;
+                float hours = durationMillis / (1000f * 60 * 60); // convert milliseconds to hours
+                return hours;
+            } else {
+                durationMillis = (wakeTimeMillis + (24 * 60 * 60 * 1000) - sleepTimeMillis)  ; // Add one day if wake time is before sleep time
+                float hours = durationMillis / (1000f * 60 * 60); // convert milliseconds to hours
+                hours=hours-12;
+                return hours;
+            }
+
+            // Convert milliseconds to hours
+
+
+
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
     private void displayChart(List<Entry> entries) {
         LineDataSet dataSet = new LineDataSet(entries, "Sleep Data");
+        dataSet.setLineWidth(2.5f);
+        dataSet.setCircleRadius(4.5f);
+        dataSet.setDrawValues(true);
+        dataSet.setValueTextColor(dataSet.getColor()); // Set the value text color to the same as the line color
+
+        // Set custom value formatter for data points
+        dataSet.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getPointLabel(Entry entry) {
+                float value = entry.getY();  // Assuming value is float representing total sleep duration in hours
+
+                int hours = (int) value;  // Get the integer part as hours
+                int minutes = (int) ((value - hours) * 60);  // Convert the fractional part to minutes
+                sleepDuration.setText(String.format(Locale.getDefault(), "%dh %dm", hours, minutes));
+
+                return String.format(Locale.getDefault(), "%dh %dm", hours, minutes);
+
+            }
+        });
+
         LineData lineData = new LineData(dataSet);
         sleepChart.setData(lineData);
 
@@ -165,4 +233,6 @@ public class SleepTrackerActivity extends AppCompatActivity {
 
         sleepChart.invalidate(); // refresh the chart
     }
+
+
 }

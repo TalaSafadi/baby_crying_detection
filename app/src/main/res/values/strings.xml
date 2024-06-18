@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">baby_cry_Identfication</string>
+    <string name="app_name">Angel Tears</string>
     <string name="app_name2">Angel Tears</string>
     <string name="Login">Login</string>
     <string name="Sign_up">Sign Up</string>
@@ -17,6 +17,8 @@ and cared for. so you can relax </string>
     <string name="ForgetPassword">Forget Password? </string>
     <string name="StopAlert">Stop AlERT </string>
     <string name="listen">listen </string>
+    <string name="track_sleep">track sleep </string>
+    <string name="Add_Sleep_Data">Add Sleep Data </string>
 
 
 </resources>

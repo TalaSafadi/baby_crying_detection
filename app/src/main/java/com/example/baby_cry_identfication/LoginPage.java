@@ -102,7 +102,7 @@ public class LoginPage extends AppCompatActivity {
             public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 Log.d(TAG, "Authentication succeeded");
-                Intent intent = new Intent(LoginPage.this,VoiceRecorder.class);
+                Intent intent = new Intent(LoginPage.this,SleepTrackerActivity.class);
                 finish();
                 startActivity(intent);
             }

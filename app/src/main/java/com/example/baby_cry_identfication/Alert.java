@@ -17,7 +17,7 @@ public class Alert extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alert_dark);
+        setContentView(R.layout.activity_alert);
 
         // Find the buttons by their IDs
         Button startButton = findViewById(R.id.start_button);

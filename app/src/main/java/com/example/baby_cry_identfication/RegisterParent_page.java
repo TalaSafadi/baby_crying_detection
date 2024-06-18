@@ -12,12 +12,15 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RegisterParent_page extends AppCompatActivity {
@@ -27,7 +30,7 @@ public class RegisterParent_page extends AppCompatActivity {
     private Button signUpButton;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private CheckBox Verfied;
+
     private String emailsave, passwordsave,namesave;
 
     @Override
@@ -42,10 +45,9 @@ public class RegisterParent_page extends AppCompatActivity {
 
         userName = findViewById(R.id.UserName);
         loginEmail = findViewById(R.id.LoginEmail);
-        phoneNumber = findViewById(R.id.ConfirmPassword);
+        phoneNumber = findViewById(R.id.EmergenyContact);
         password = findViewById(R.id.Password);
         signUpButton = findViewById(R.id.Login_LoginPage);
-        Verfied = findViewById(R.id.rememberMe);
         loadData();
 
 
@@ -62,8 +64,13 @@ public class RegisterParent_page extends AppCompatActivity {
         String email = this.loginEmail.getText().toString().trim();
         String password = this.password.getText().toString().trim();
         String number = this.phoneNumber.getText().toString().trim();
-        boolean verfied = this.Verfied.isChecked();
-        //String imageUrl = "no image";
+
+        // Initialize and populate sleep array
+        ArrayList<String> sleep = new ArrayList<>();
+        sleep.add("06-10, 12:00 to 2:30");
+        sleep.add("06-20, 3:00 to 4:00");
+        sleep.add("06-27, 1:00 to 1:30");
+        sleep.add("06-28, 11:00 to 1:00");
 
         if (userName.isEmpty() || email.isEmpty() || password.isEmpty() || number.isEmpty()) {
             Toast.makeText(RegisterParent_page.this, "Please fill all fields.", Toast.LENGTH_SHORT).show();
@@ -73,51 +80,44 @@ public class RegisterParent_page extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        ArrayList <String> sleep = new ArrayList<>();
-                        Parent user = new Parent(userName, email, number, false ,sleep);
+                        // Create a map to store user data
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("UserName", userName);
+                        user.put("Email", email);
+                        user.put("Number", number);
+                        user.put("rememberMe_flage", false);
+                        user.put("sleep", Arrays.asList("00:00"));
+
+                        // Save to Firestore
                         FirebaseFirestore.getInstance().collection("Parents").document(email).set(user)
-                                .addOnSuccessListener(documentReference -> {
-                                  //  Log.d("RegisterParent_page77777", "DocumentSnapshot added with ID: " + documentReference.getId());
-                                    // Optionally, you can also store the document ID in the user object and update the document if needed
+                                .addOnSuccessListener(aVoid -> {
+                                    Log.d("RegisterParent_page", "DocumentSnapshot successfully written!");
                                 })
                                 .addOnFailureListener(e -> {
-                                    Log.w("RegisterParent_page888888", "Error adding document", e);
+                                    Log.w("RegisterParent_page", "Error writing document", e);
                                 });
+
+                        // Save data to SharedPreferences
                         saveData();
+
+                        // Navigate to main activity
                         Intent intent = new Intent(RegisterParent_page.this, MainActivity.class);
                         startActivity(intent);
                         finish();
-                        /*
-                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                        if (firebaseUser != null) {
-                            String userId = firebaseUser.getUid();
-                            Map<String, Object> user = new HashMap<>();
-                            user.put("userName", userName);
-                            user.put("email", email);
-                            user.put("phoneNumber", number);
-                            user.put("rememberMe_flage", false);
-                            user.put("verified_flage", Verfied);
-
-                            db.collection("users").document(userId) // Using userId as the document ID
-                                    .set(user)
-                                    .addOnSuccessListener(aVoid -> Toast.makeText(Register_page.this, "User registered successfully.", Toast.LENGTH_SHORT).show())
-                                    .addOnFailureListener(e -> {
-                                        Toast.makeText(Register_page.this, "Error adding user: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                                        Log.d("FirestoreError", e.getMessage()); // Log the error
-                                    });
-                        }*/
                     } else {
                         Toast.makeText(RegisterParent_page.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        Log.d("t", "signUpUser: " + task.getException().getMessage());
+                        Log.d("RegisterParent_page", "signUpUser: " + task.getException().getMessage());
                     }
                 });
     }
+
+
 
     private void saveData() {
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        Toast.makeText(this, "flag " + flag, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "flag " + flag, Toast.LENGTH_SHORT).show();
         editor.putBoolean("remeberMe", flag);
         editor.putString("email", loginEmail.getText().toString());
         editor.putString("password", password.getText().toString());
