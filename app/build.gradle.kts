@@ -13,7 +13,6 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -23,14 +22,20 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    packagingOptions {
+        exclude("META-INF/LICENSE.md")
+        exclude("META-INF/NOTICE.md")
+        exclude("META-INF/DEPENDENCIES")
+    }
 }
 
 dependencies {
-
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -53,7 +58,16 @@ dependencies {
     implementation ("com.google.firebase:firebase-firestore:25.0.0")
     implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation ("com.github.PhilJay:MPAndroidChart:v3.0.3")
+    implementation("com.sun.mail:android-mail:1.6.7") {
+        exclude(group = "javax.activation", module = "activation")
+    }
+    implementation("com.sun.mail:android-activation:1.6.7") {
+        exclude(group = "javax.activation", module = "activation")
 
+    }
+    implementation ("com.google.api-client:google-api-client:1.32.1")
+    implementation ("com.google.oauth-client:google-oauth-client-jetty:1.36.0")
+    implementation ("com.google.http-client:google-http-client-jackson2:1.40.1")
 
 
 }

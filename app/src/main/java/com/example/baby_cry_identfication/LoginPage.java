@@ -83,7 +83,7 @@ public class LoginPage extends AppCompatActivity {
         loadData();
 
         if (flag) {
-            Intent intent = new Intent(LoginPage.this, SleepTrackerActivity.class);
+            Intent intent = new Intent(LoginPage.this, Alert.class);
             startActivity(intent);
         }
         if (emailsave != null) {
@@ -102,7 +102,7 @@ public class LoginPage extends AppCompatActivity {
             public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 Log.d(TAG, "Authentication succeeded");
-                Intent intent = new Intent(LoginPage.this,SleepTrackerActivity.class);
+                Intent intent = new Intent(LoginPage.this,Alert.class);
                 finish();
                 startActivity(intent);
             }

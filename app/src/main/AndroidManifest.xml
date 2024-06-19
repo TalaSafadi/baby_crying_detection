@@ -2,16 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
 
 
     <application
@@ -24,6 +34,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baby_cry_Identfication"
         tools:targetApi="31">
+        <service
+            android:name=".CallAudioService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
             android:name=".SleepTrackerActivity"
             android:exported="false" />
@@ -32,8 +47,8 @@
             android:exported="false" />
         <activity
             android:name=".Alert"
-            android:theme="@style/TransparentTheme"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/TransparentTheme" />
         <activity
             android:name=".VoiceRecorder"
             android:exported="false" />
@@ -43,10 +58,6 @@
         <activity
             android:name=".Login_guardian"
             android:exported="false" />
-        <activity
-            android:name=".RegisterGardian_page"
-            android:exported="false"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".AudioPlayerActivity"
             android:exported="false"
