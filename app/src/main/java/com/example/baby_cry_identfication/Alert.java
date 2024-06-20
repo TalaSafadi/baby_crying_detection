@@ -40,14 +40,15 @@ public class Alert extends Activity {
 
         // Initialize AudioManager
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        startVibration();
+        startSMSAndCallTimer();
 
         // Set OnClickListener on the start button
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Start vibrating and start SMS and call timer
-                startVibration();
-                startSMSAndCallTimer();
+
             }
         });
 
@@ -76,14 +77,11 @@ public class Alert extends Activity {
         }
     }
 
-    // Start the SMS and call timer
     private void startSMSAndCallTimer() {
-        // Set the timer for 3 seconds (3000 milliseconds) after sending SMS for demonstration purposes.
-        // Adjust the timer duration as needed.
+
         new CountDownTimer(3000, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                // Update the UI if needed with the remaining time.
             }
 
             public void onFinish() {
@@ -93,10 +91,9 @@ public class Alert extends Activity {
         }.start();
     }
 
-    // Send SMS with current location
     private void sendSMS() {
-        String phoneNumber = "+972502888693"; // Replace with the recipient's phone number in international format
-        String message = "Baby has been crying for a long time. Please check on the baby. " + getLocation(); // SMS message with location
+        String phoneNumber = "+970599506228";
+        String message = "Baby has been crying for a long time , parents cannot be reached. Please check on the baby. " + getLocation();
 
         if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED &&
                 checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -113,7 +110,7 @@ public class Alert extends Activity {
 
     // Make phone call
     private void makePhoneCall() {
-        String phoneNumber = "+972502888693"; // Replace with the phone number you want to call
+        String phoneNumber = "+970599506228";
 
         if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PERMISSION_REQUEST_CALL_PHONE);
@@ -125,7 +122,6 @@ public class Alert extends Activity {
         }
     }
 
-    // Method to get current location
     private String getLocation() {
         // Initialize location manager
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -154,13 +150,13 @@ public class Alert extends Activity {
         if (requestCode == PERMISSION_REQUEST_SEND_SMS) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
                     grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                sendSMS(); // Permissions granted, send SMS
-            } else {
+                sendSMS();
+
                 Toast.makeText(getApplicationContext(), "Permission denied. SMS not sent.", Toast.LENGTH_LONG).show();
             }
         } else if (requestCode == PERMISSION_REQUEST_CALL_PHONE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                makePhoneCall(); // Permission granted, make phone call
+                makePhoneCall();
             } else {
                 Toast.makeText(getApplicationContext(), "Permission denied. Cannot make phone call.", Toast.LENGTH_LONG).show();
             }

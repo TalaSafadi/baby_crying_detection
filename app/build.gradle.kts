@@ -68,6 +68,10 @@ dependencies {
     implementation ("com.google.api-client:google-api-client:1.32.1")
     implementation ("com.google.oauth-client:google-oauth-client-jetty:1.36.0")
     implementation ("com.google.http-client:google-http-client-jackson2:1.40.1")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation ("com.squareup.okhttp3:okhttp-urlconnection:4.9.3")
 
 
 }

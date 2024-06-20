@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         userNameMain = findViewById(R.id.UserNameMain);
         Button tutorialButton = findViewById(R.id.totorial);
         ImageButton sleepButton = findViewById(R.id.sleepbutton);
-        ImageButton tipsButton = findViewById(R.id.tips);
+        ImageButton AudioButton = findViewById(R.id.tips);
         ImageButton profileButton = findViewById(R.id.profile);
 
         // Set up custom adapter
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         // Set click listeners for buttons
         tutorialButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
         sleepButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
-        tipsButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
+        AudioButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AudioRecordingActivity.class)));
         profileButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, profile.class)));
     }
 
