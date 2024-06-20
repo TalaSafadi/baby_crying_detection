@@ -1,147 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_23"
+    android:background="@color/light_blue"
     tools:context=".SleepTrackerActivity">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/sleepChart"
+        android:layout_width="355dp"
+        android:layout_height="353dp"
+        android:background="@drawable/botton_background_parent3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19">
+
+    </com.github.mikephil.charting.charts.LineChart>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="348dp"
+        android:layout_height="285dp"
+        android:background="@drawable/botton_background_parent1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.911" />
+
+    <TextView
+        android:id="@+id/sleepTime"
+        android:layout_width="205dp"
+        android:layout_height="36dp"
+        android:fontFamily="@font/amethysta"
+        android:text="Sleep Duration"
+        android:textAlignment="center"
+        android:textColor="@color/text_gray"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="213dp"
+        android:layout_height="29dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="Sleep  Information"
+        android:textColor="@color/text_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.684" />
 
     <EditText
         android:id="@+id/going_to_sleep"
-        android:layout_width="124dp"
-        android:layout_height="84dp"
-        android:background="@color/transparant_white"
+        android:layout_width="233dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/text_gray"
         android:hint="HH:mm"
         android:inputType="time"
         android:textAlignment="center"
-        android:textColor="@color/gold_yellow"
-        android:textColorHint="@color/gold_yellow"
+        android:textColor="@color/text_gray"
+        android:textColorHint="@color/text_gray"
         android:textSize="14dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.761" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="50dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Go To sleep"
+        android:textAlignment="center"
+        android:textColor="@color/text_gray"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
 
     <EditText
         android:id="@+id/wakingUp"
-        android:layout_width="124dp"
-        android:layout_height="84dp"
-        android:background="@color/transparant_white"
+        android:layout_width="236dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/text_gray"
         android:hint="HH:mm"
         android:inputType="time"
         android:textAlignment="center"
-        android:textColor="@color/gold_yellow"
-        android:textColorHint="@color/gold_yellow"
+        android:textColor="@color/text_gray"
+        android:textColorHint="@color/text_gray"
         android:textSize="14dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.849" />
+
+    <Button
+        android:id="@+id/dateButton2"
+        android:layout_width="56dp"
+        android:layout_height="72dp"
+        android:background="@drawable/botton_background_parent2"
+        android:text="Select Date"
+        android:textAlignment="center"
+        android:textColor="@color/text_gray"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.799" />
 
     <Button
         android:id="@+id/addButton2"
         android:layout_width="143dp"
         android:layout_height="50dp"
-        android:background="@drawable/botton_background4"
+        android:background="@drawable/button_background6"
         android:text="@string/Add_Sleep_Data"
-        android:textColor="@color/text_gray"
+        android:textColor="@color/light_blue"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.938" />
 
-    <Button
-        android:id="@+id/dateButton2"
-        android:layout_width="281dp"
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="44dp"
         android:layout_height="38dp"
-        android:background="@color/transparant_white"
-        android:text="Select Date"
+        android:fontFamily="@font/aclonica"
+        android:text="Wake up"
         android:textAlignment="center"
-        android:textColor="@color/gold_yellow"
-        android:visibility="visible"
+        android:textColor="@color/text_gray"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="409dp"
-        android:layout_height="456dp"
-        android:background="@color/transparant_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/sleepChart"
-        android:layout_width="397dp"
-        android:layout_height="372dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308">
-
-    </com.github.mikephil.charting.charts.LineChart>
+        app:layout_constraintVertical_bias="0.838" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="174dp"
+        android:layout_width="229dp"
         android:layout_height="39dp"
-        android:fontFamily="@font/amethysta"
+        android:fontFamily="@font/alfa_slab_one"
         android:text="@string/track_sleep"
-        android:textColor="@color/light_blue"
+        android:textColor="@color/text_gray"
         android:textSize="30dp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.032" />
 
     <ImageButton
         android:id="@+id/informationButton"
         android:layout_width="23dp"
-        android:layout_height="22dp"
+        android:layout_height="21dp"
         android:background="@drawable/exclamation_marke"
+        android:backgroundTint="@color/text_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.057" />
 
-    <TextView
-        android:id="@+id/sleepTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="Sleep Duration"
-        android:textColor="@color/light_blue"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
 </androidx.constraintlayout.widget.ConstraintLayout>

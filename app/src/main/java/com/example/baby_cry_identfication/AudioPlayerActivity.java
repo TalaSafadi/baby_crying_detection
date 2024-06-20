@@ -36,10 +36,20 @@ public class AudioPlayerActivity extends AppCompatActivity {
         adaptor = new CustomAdaptor(this, SList);
         ShowsList.setAdapter(adaptor);
 
-
-        SList.add(new Media("Show 1", "Description 1", R.drawable.dinoicon1, R.raw.lullaby,"En"));
-        SList.add(new Media("Show 2", "Description 2", R.drawable.home_dino, R.raw.lullaby2,"En"));
-        SList.add(new Media("Show 3", "Description 3", R.drawable.dino_egg,R.raw.story1,"Ar"));
+        SList.add(new Media("عهد الاصدقاء", "اغنية عهد الاصقاء من كرتون عهد الاصدقاء", R.drawable.music2, R.raw.arhdalasdikaarabic,"Ar"));
+        SList.add(new Media("onceuponadecember", "  Anastasia once upon a december", R.drawable.music2,R.raw.onceuponadecember,"En"));
+        SList.add(new Media("مرة في ديسمبر", "اغنية مرة في ديسمبر انستازيا", R.drawable.music2, R.raw.anastaziaarbic,"Ar"));
+        SList.add(new Media("Sleep lullaby", "lullaby to help your baby sleep", R.drawable.music2, R.raw.lullaby,"En"));
+        SList.add(new Media("you are my sunshine", "you are my sunshine lullaby for kids   ", R.drawable.music2, R.raw.youaremysunshine,"En"));
+        SList.add(new Media("you are my sunshine ", "only instruments", R.drawable.music2,R.raw.story1,"En"));
+        SList.add(new Media(" امي ريمي", "اعمية امي امي ريمي", R.drawable.music2,R.raw.remi,"Ar"));
+        SList.add(new Media("rockabye", "rockabye baby lullaby", R.drawable.music2, R.raw.rockabyelullaby,"En"));
+        SList.add(new Media("relaxing Lullabies", "lullabies to make your baby relaxed", R.drawable.music2, R.raw.relaxinglullabies,"En"));
+        SList.add(new Media("اغاني قبل النوم للاطفال", "Description 2", R.drawable.music2, R.raw.arabiclulaby,"Ar"));
+        SList.add(new Media("sleep lullaby", "Description 2", R.drawable.music2, R.raw.songofstorm,""));
+        SList.add(new Media("songofstorm", "sleep lullaby for baby", R.drawable.music2,R.raw.songofstorm,"En"));
+        SList.add(new Media("twinlkl twinkle", "twinkle twinkle little star lullaby", R.drawable.music2,R.raw.twinkletwinklelittlestar,"En"));
+        SList.add(new Media("white noise music box", "white noise music box for sleep  ", R.drawable.music2, R.raw.whitnoisemusicbox,"En"));
 
         adaptor.notifyDataSetChanged();
     }
@@ -67,7 +77,7 @@ public class AudioPlayerActivity extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.row, parent, false);
+            View row = layoutInflater.inflate(R.layout.rowstories, parent, false);
 
             TextView Title = row.findViewById(R.id.RowAudioTitle);
             TextView Description = row.findViewById(R.id.RowAirYear);
@@ -76,7 +86,6 @@ public class AudioPlayerActivity extends AppCompatActivity {
             playButton.setImageResource(android.R.drawable.ic_media_play);
             Button language = row.findViewById(R.id.languageButton);
             language.setText(SList.get(position).getLanguage());
-
 
             Media show = SList.get(position);
 
@@ -105,54 +114,43 @@ public class AudioPlayerActivity extends AppCompatActivity {
                 }
             });
 
-
-
             return row;
         }
     }
-}
+    public class Media {
+        private String title;
+        private String description;
+        private int poster;
+        private int audioUrl;
+        private String language;
 
-// Assuming you have a Shows class defined as below:
-class Media {
-    private String title;
-    private String description ,language;;
-    private int poster;
-    private int audioUrl;
+        public Media(String title, String description, int poster, int audioUrl, String language) {
+            this.title = title;
+            this.description = description;
+            this.poster = poster;
+            this.audioUrl = audioUrl;
+            this.language = language;
+        }
 
+        public String getTitle() {
+            return title;
+        }
 
-    Media(String title, String description, int poster, int audioUrl , String language) {
-        this.title = title;
-        this.description = description;
-        this.poster = poster;
-        this.audioUrl = audioUrl;
+        public String getDescription() {
+            return description;
+        }
 
-        this.language = language;
+        public int getPoster() {
+            return poster;
+        }
 
+        public int getAudioUrl() {
+            return audioUrl;
+        }
+
+        public String getLanguage() {
+            return language;
+        }
     }
 
-    String getTitle() {
-        return title;
-    }
-
-    String getDescription() {
-        return description;
-    }
-
-    int getPoster() {
-        return poster;
-    }
-
-    int getAudioUrl() {
-        return audioUrl;
-    }
-
-
-
-    String getLanguage() {
-        return language;
-    }
-
-    void setLanguage(String language) {
-        this.language = language;
-    }
 }

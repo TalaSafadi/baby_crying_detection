@@ -92,7 +92,7 @@
                 android:textColor="#808080"
                 android:textStyle="bold" />
             <EditText
-                android:id="@+id/UserName"
+                android:id="@+id/ChildName"
                 android:layout_width="356dp"
                 android:layout_height="47dp"
                 android:inputType="textEmailAddress" />
@@ -106,7 +106,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/LoginEmail"
+                android:id="@+id/ChidAge"
                 android:layout_width="356dp"
                 android:layout_height="47dp"
                 android:inputType="textEmailAddress" />
@@ -136,7 +136,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/Password"
+                android:id="@+id/EmergencyContactName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -158,7 +158,7 @@
 
 
             <Button
-                android:id="@+id/Login_LoginPage"
+                android:id="@+id/NextPageSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/button_background1"

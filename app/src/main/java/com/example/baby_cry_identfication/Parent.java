@@ -3,21 +3,33 @@ package com.example.baby_cry_identfication;
 import java.util.ArrayList;
 
 public class Parent {
-    protected String UserName, Email , Number ;
-    protected boolean rememberMe_flage;
+    protected String UserName, Email , Number , ChildNmae , Emergency_contactName ;
+    //protected boolean rememberMe_flage;
     protected ArrayList<String>sleep;
+    int Emergency_contactNumber, child_age;
 
 
-    public Parent(String userName, String email, String number, boolean rememberMe_flage,ArrayList<String> sleep) {
+  /*  public Parent(String userName, String email, String number, boolean rememberMe_flage,ArrayList<String> sleep,) {
         UserName = userName;
         Email = email;
         Number = number;
-        this.rememberMe_flage = rememberMe_flage;
+        //this.rememberMe_flage = rememberMe_flage;
         this.sleep = sleep;
         //this.imageUrl = imageUrl;
+    }*/
+
+    public Parent(String userName, String email, String number, ArrayList<String> sleep, String childNmae,
+                  String emergency_contactName, int emergency_contactNumber, int child_age) {
+        UserName = userName;
+        Email = email;
+        Number = number;
+        //this.rememberMe_flage = rememberMe_flage;
+        this.sleep = sleep;
+        ChildNmae = childNmae;
+        Emergency_contactName = emergency_contactName;
+        Emergency_contactNumber = emergency_contactNumber;
+        this.child_age = child_age;
     }
-
-
 
 
     public String getUserName() {
@@ -46,11 +58,43 @@ public class Parent {
         Number = number;
     }
 
-    public boolean isRememberMe_flage() {
-        return rememberMe_flage;
+    public String getChildNmae() {
+        return ChildNmae;
     }
 
-    public void setRememberMe_flage(boolean rememberMe_flage) {
-        this.rememberMe_flage = rememberMe_flage;
+    public void setChildNmae(String childNmae) {
+        ChildNmae = childNmae;
+    }
+
+    public String getEmergency_contactName() {
+        return Emergency_contactName;
+    }
+
+    public void setEmergency_contactName(String emergency_contactName) {
+        Emergency_contactName = emergency_contactName;
+    }
+
+    public ArrayList<String> getSleep() {
+        return sleep;
+    }
+
+    public void setSleep(ArrayList<String> sleep) {
+        this.sleep = sleep;
+    }
+
+    public int getEmergency_contactNumber() {
+        return Emergency_contactNumber;
+    }
+
+    public void setEmergency_contactNumber(int emergency_contactNumber) {
+        Emergency_contactNumber = emergency_contactNumber;
+    }
+
+    public int getChild_age() {
+        return child_age;
+    }
+
+    public void setChild_age(int child_age) {
+        this.child_age = child_age;
     }
 }

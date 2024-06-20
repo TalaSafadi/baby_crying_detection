@@ -1,20 +1,28 @@
 package com.example.baby_cry_identfication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private Button logout, button5;
-    private ImageView imageView8, imageView9, imageView11;
-    private final FirebaseFirestore fireStore = FirebaseFirestore.getInstance();
-    private SharedPreferences sharedPreferences;
+    private ListView listView;
+    private CustomAdaptor adaptor;
+    private ArrayList<Activities> activitiesList = new ArrayList<>();
+    private TextView userNameMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,32 +30,66 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize views
-      //  logout = findViewById(R.id.logout);
-        button5 = findViewById(R.id.button5);
+        listView = findViewById(R.id.listViewMain);
+        userNameMain = findViewById(R.id.UserNameMain);
+        Button tutorialButton = findViewById(R.id.totorial);
+        ImageButton sleepButton = findViewById(R.id.sleepbutton);
+        ImageButton tipsButton = findViewById(R.id.tips);
+        ImageButton profileButton = findViewById(R.id.profile);
 
-        imageView11 = findViewById(R.id.imageView11);
+        // Set up custom adapter
+        adaptor = new CustomAdaptor(this, activitiesList);
+        listView.setAdapter(adaptor);
 
-        // Set up logout button
-       /* logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("rememberMe", false);
-                editor.apply();
+        // Add items to activities list
+        activitiesList.add(new Activities("Show 1", "Description 1", R.drawable.dino_egg, "For Infants", AudioPlayerActivity.class));
+        activitiesList.add(new Activities("Show 2", "Description 2", R.drawable.dino_egg, "For Toddlers", StoryAudio.class));
+        activitiesList.add(new Activities("Show 3", "Description 3", R.drawable.dino_egg, "For Kids", StoryVideo.class));
 
-                Intent intent = new Intent(MainActivity.this, LoginPage.class);
-                startActivity(intent);
-                finish();
+        adaptor.notifyDataSetChanged();
+
+        // Set click listeners for buttons
+        tutorialButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
+        sleepButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
+        tipsButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
+        profileButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, profile.class)));
+    }
+
+    public class CustomAdaptor extends ArrayAdapter<Activities> {
+        private Context context;
+        private ArrayList<Activities> activitiesList;
+
+        public CustomAdaptor(Context context, ArrayList<Activities> activitiesList) {
+            super(context, R.layout.row, activitiesList);
+            this.context = context;
+            this.activitiesList = activitiesList;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = layoutInflater.inflate(R.layout.row2, parent, false);
             }
-        });*/
 
-        // Add other button functionalities here
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Handle button click
-            }
-        });
+            TextView title = convertView.findViewById(R.id.RowActivityTitle);
+            TextView description = convertView.findViewById(R.id.RowAirYear);
+            ImageView poster = convertView.findViewById(R.id.audioImage);
+           // Button languageButton = convertView.findViewById(R.id.languageButton);
+            Button goToActivityButton = convertView.findViewById(R.id.goToActivityButton);
+
+            Activities activity = activitiesList.get(position);
+
+            title.setText(activity.getTitle());
+            description.setText(activity.getDescription());
+            Glide.with(context).load(activity.getPoster()).into(poster);
+
+            goToActivityButton.setOnClickListener(v -> {
+                Intent intent = new Intent(context, activity.getTargetActivity());
+                context.startActivity(intent);
+            });
+
+            return convertView;
+        }
     }
 }

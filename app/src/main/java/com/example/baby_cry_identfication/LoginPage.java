@@ -86,11 +86,15 @@ public class LoginPage extends AppCompatActivity {
             Intent intent = new Intent(LoginPage.this, Alert.class);
             startActivity(intent);
         }
+
         if (emailsave != null) {
+            fingerprint.setVisibility(View.VISIBLE); // Show fingerprint button
             fingerprint.setOnClickListener(view -> {
-                Log.d(TAG, "Fingerprint button clicked");
+                Log.d(TAG, "Fingerprint button clicked"+emailsave+passwordsave);
                 showBiometricPrompt();
             });
+        } else {
+            fingerprint.setVisibility(View.GONE); // Hide fingerprint button
         }
     }
 
@@ -102,7 +106,8 @@ public class LoginPage extends AppCompatActivity {
             public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 Log.d(TAG, "Authentication succeeded");
-                Intent intent = new Intent(LoginPage.this,Alert.class);
+
+                Intent intent = new Intent(LoginPage.this, MainActivity.class);
                 finish();
                 startActivity(intent);
             }
@@ -131,14 +136,14 @@ public class LoginPage extends AppCompatActivity {
 
     private void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
-        flag = sharedPreferences.getBoolean("remeberMe", false);
+        flag = sharedPreferences.getBoolean("rememberMe", false);
         emailsave = sharedPreferences.getString("email", null);
     }
 
     private void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("remeberMe", flag);
+        editor.putBoolean("rememberMe", flag);
         editor.putString("email", UserEmail.getText().toString());
         editor.putString("password", userPassword.getText().toString());
         editor.apply();
@@ -152,7 +157,7 @@ public class LoginPage extends AppCompatActivity {
                 Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show();
                 flag = rememberMe.isChecked();
                 saveData();
-                Intent intent = new Intent(LoginPage.this, Alert.class);
+                Intent intent = new Intent(LoginPage.this, MainActivity.class);
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();

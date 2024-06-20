@@ -10,13 +10,18 @@
     <color name="text_gray">#636161</color>
     <color name="red">#D8FF0000</color>
     <color name="redAlert">#F44336</color>
-    <color name="dark_pink">#FF8C8C</color>
+    <color name="pink">#FF8C8C</color>
+    <color name="semi_transparent_pink">#66FFA4A4</color>
     <color name="light_blue">#E4EEFD</color>
     <color name="bright_blue">#CB50E9FD</color>
     <color name="gold_yellow">#F6BC33</color>
     <color name="light_yellow">#BFF6BC33</color>
     <color name="semi_transparent_grey">#A0CCCCCC</color>
     <color name="purple">#8F328F</color>
+    <color name="dark_pink">#DF3F73</color>
+    <color name="dark_blue">#19396D</color>
+    <color name="half_transparent_grey">#80000000</color>
+
 
 
 

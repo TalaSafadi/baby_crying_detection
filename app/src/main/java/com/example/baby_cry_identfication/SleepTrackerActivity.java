@@ -1,12 +1,14 @@
 package com.example.baby_cry_identfication;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,8 @@ public class SleepTrackerActivity extends AppCompatActivity {
     private String userEmail;
     private List<String> sleepDates;
     private TextView sleepDuration;
+    private ImageButton infobutton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,19 @@ public class SleepTrackerActivity extends AppCompatActivity {
         sleepChart = findViewById(R.id.sleepChart);
         sleepDuration = findViewById(R.id.sleepTime);
         db = FirebaseFirestore.getInstance();
+        infobutton = findViewById(R.id.informationButton);
+
+        infobutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back to SignUpActivity
+                Intent intent = new Intent(SleepTrackerActivity.this, PopupSleep.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        sleepDuration.setText(" sleep duration");
+
 
         // Retrieve the user's email from SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);

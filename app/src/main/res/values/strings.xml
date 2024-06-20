@@ -17,8 +17,26 @@ and cared for. so you can relax </string>
     <string name="ForgetPassword">Forget Password? </string>
     <string name="StopAlert">Stop AlERT </string>
     <string name="listen">listen </string>
-    <string name="track_sleep">track sleep </string>
+    <string name="track_sleep">Sleep Tracker </string>
     <string name="Add_Sleep_Data">Add Sleep Data </string>
+    <string name="SignUp_page2">Almost there just a few more steps </string>
+    <string name="Child_Name">Child Name</string>
+    <string name="Child_Age">Child Age</string>
+    <string name="Emergency_Contact_Number">Emergency Contact Number</string>
+    <string name="Emergency_Contact_Name">Emergency Contact Name</string>
+    <string name="Why_all_this_info">Why we need this information</string>
+    <string name="Parent_Name">Parent Name</string>
+    <string name="Parent_Email"> Login Email</string>
+    <string name="Parent_Password">Password</string>
+    <string name="Parent_Phone_Number">Parent Number</string>
+    <string name="sigup_text">Create a new Account</string>
+    <string name="Hello">Hello! </string>
+    <string name="Totorial">Full App Tutorial</string>
+    <string name="Open_Totorial">begin</string>
+    <string name="List_music">List of caming music for the baby</string>
+    <string name="List_stories">list of educational stories in arabic and english</string>
+    <string name="music">Kids &amp; infent songs</string>
+    <string name="stories">Kids stories</string>
 
 
 </resources>
