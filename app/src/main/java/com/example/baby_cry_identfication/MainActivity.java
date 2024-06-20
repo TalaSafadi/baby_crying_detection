@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adaptor);
 
         // Add items to activities list
-        activitiesList.add(new Activities("Show 1", "Description 1", R.drawable.dino_egg, "For Infants", AudioPlayerActivity.class));
-        activitiesList.add(new Activities("Show 2", "Description 2", R.drawable.dino_egg, "For Toddlers", StoryAudio.class));
-        activitiesList.add(new Activities("Show 3", "Description 3", R.drawable.dino_egg, "For Kids", StoryVideo.class));
+        activitiesList.add(new Activities("Music", "Music for kids and infents", R.drawable.dino_egg, "For Infants", AudioPlayerActivity.class));
+        activitiesList.add(new Activities("Books", "Bed time stories for kids ", R.drawable.dino_egg, "For Toddlers", StoryAudio.class));
+        activitiesList.add(new Activities("Video Cartoon", "entertaining cartoon", R.drawable.dino_egg, "For Kids", StoryVideo.class));
 
         adaptor.notifyDataSetChanged();
 
