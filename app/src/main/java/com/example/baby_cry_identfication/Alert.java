@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 public class Alert extends Activity {
 
     private Vibrator vibrator;
+    private MediaPlayer mediaPlayer;
     private AudioManager audioManager;
     private static final int PERMISSION_REQUEST_SEND_SMS = 0;
     private static final int PERMISSION_REQUEST_CALL_PHONE = 1;
@@ -38,17 +40,27 @@ public class Alert extends Activity {
         // Initialize Vibrator
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
+        // Initialize MediaPlayer
+        mediaPlayer = MediaPlayer.create(this, R.raw.crying);
+
         // Initialize AudioManager
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+        // Start vibration, sound and SMS/Call timer on activity start
         startVibration();
+        setVolumeToMax();
+        playSound();
         startSMSAndCallTimer();
 
         // Set OnClickListener on the start button
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start vibrating and start SMS and call timer
-
+                // Start vibrating, sound and SMS/Call timer when the start button is clicked
+                startVibration();
+                setVolumeToMax();
+                playSound();
+                startSMSAndCallTimer();
             }
         });
 
@@ -56,10 +68,22 @@ public class Alert extends Activity {
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Stop vibrating when the stop button is clicked
+                // Stop vibrating and sound when the stop button is clicked
                 stopVibration();
+                stopSound();
             }
         });
+    }
+
+    // Set the device volume to maximum
+    private void setVolumeToMax() {
+        if (audioManager != null) {
+            audioManager.setStreamVolume(
+                    AudioManager.STREAM_MUSIC,
+                    audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+                    0
+            );
+        }
     }
 
     // Start vibrating continuously
@@ -77,10 +101,27 @@ public class Alert extends Activity {
         }
     }
 
+    // Start playing sound
+    private void playSound() {
+        if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
+            mediaPlayer.start();
+        }
+    }
+
+    // Stop playing sound
+    private void stopSound() {
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+            try {
+                mediaPlayer.prepare();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private void startSMSAndCallTimer() {
-
         new CountDownTimer(3000, 1000) {
-
             public void onTick(long millisUntilFinished) {
             }
 
@@ -93,7 +134,7 @@ public class Alert extends Activity {
 
     private void sendSMS() {
         String phoneNumber = "+970599506228";
-        String message = "Baby has been crying for a long time , parents cannot be reached. Please check on the baby. " + getLocation();
+        String message = "Baby has been crying for a long time, parents cannot be reached. Please check on the baby. " + getLocation();
 
         if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED &&
                 checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -151,7 +192,6 @@ public class Alert extends Activity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
                     grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 sendSMS();
-
                 Toast.makeText(getApplicationContext(), "Permission denied. SMS not sent.", Toast.LENGTH_LONG).show();
             }
         } else if (requestCode == PERMISSION_REQUEST_CALL_PHONE) {
@@ -160,6 +200,16 @@ public class Alert extends Activity {
             } else {
                 Toast.makeText(getApplicationContext(), "Permission denied. Cannot make phone call.", Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Release the MediaPlayer when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
     }
 }
