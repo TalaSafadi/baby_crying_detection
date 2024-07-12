@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         // Add items to activities list
         activitiesList.add(new Activities("Music", "for kids and infents", R.drawable.music_icone, "For Infants", AudioPlayerActivity.class));
         activitiesList.add(new Activities("Books", "Bed time stories", R.drawable.books_icone, "For Toddlers", StoryAudio.class));
-        activitiesList.add(new Activities("Video Cartoon", "entertaining cartoon", R.drawable.dino_egg, "For Kids", StoryVideo.class));
+        activitiesList.add(new Activities("Video Cartoon", "entertaining cartoon", R.drawable.cartoon_icone, "For Kids", StoryVideo.class));
 
         adaptor.notifyDataSetChanged();
 
