@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="197dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="@string/BabyMile_stones"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="323dp"
+            android:layout_height="314dp"
+            android:layout_marginTop="19dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="It's exciting to watch your baby grow and develop new skills. Common milestones include smiling, rolling over, sitting up, and taking their first steps. It's important to remember that each baby is unique and will reach these milestones at their own pace. Encouraging your baby's development with age-appropriate activities and plenty of tummy time can be beneficial. Reading to your baby, talking to them, and providing opportunities for play can also support their growth. If you’re ever concerned about your baby’s development, talk to your pediatrician. The &quot;CDC&quot; offers detailed information on developmental milestones and what to expect at different ages. Additionally, resources like &quot;BabyCenter&quot; and &quot;What to Expect&quot; provide comprehensive milestone trackers and tips to support your baby's development."
+            android:textAlignment="center"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="323dp"
+            android:layout_height="233dp"
+            android:layout_marginTop="16dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/acme"
+            android:text="من الممتع مشاهدة طفلك ينمو ويطور مهارات جديدة. تشمل المعالم الشائعة الابتسام، والتقلب، والجلوس، وأخذ الخطوات الأولى. من المهم أن تتذكر أن كل طفل فريد وسيصل إلى هذه المعالم بوتيرته الخاصة. تشجيع نمو طفلك من خلال الأنشطة المناسبة للعمر والكثير من وقت البطن يمكن أن يكون مفيدًا. قراءة الكتب لطفلك، التحدث معه، وتوفير الفرص للعب يمكن أن يدعم نموه. إذا كنت قلقًا بشأن تطور طفلك، تحدث إلى طبيب الأطفال. &quot;مركز السيطرة على الأمراض&quot; يقدم معلومات مفصلة حول معالم النمو وما يمكن توقعه في أعمار مختلفة. بالإضافة إلى ذلك، توفر موارد مثل &quot;BabyCenter&quot; و&quot;ما يمكن توقعه&quot; متتبعين شاملين للمعالم ونصائح لدعم نمو طفلك. "
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView27" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acme"
+            android:text="Below are videos to help you explore more about this topic "
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+        <WebView
+            android:id="@+id/video1"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView30" />
+
+        <WebView
+            android:id="@+id/video2"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video1" />
+
+        <WebView
+            android:id="@+id/video3"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

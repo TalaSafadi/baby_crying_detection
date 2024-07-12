@@ -39,6 +39,31 @@ public class StoryVideo extends AppCompatActivity {
         videoList.add(new Video("صاحب المطحنه والحمار_ حكايات لا تنسى", "https://www.youtube.com/embed/iHyB39lpkqc?si=h3hC6HAJCdy1OVYV"));
         videoList.add(new Video("فاتنة إبنة الحاكم المغرورة - 10 - في جعبتي حكاية", "https://www.youtube.com/embed/mwYSm8YotN4?si=K18NwMo20ANsw2SH"));
         videoList.add(new Video("الصياد الفاشل والعجوز الشريرة - 11 - في جعبتي حكاية", "https://www.youtube.com/embed/Nmdgx4EGWKE?si=EQN6AVbTEZZLShHP"));
+        videoList.add(new Video("Masha and the Bear 2024 \uD83C\uDFAC NEW EPISODE! \uD83C\uDFAC Best cartoon collection \uD83E\uDD54 Soup Pursuit \uD83E\uDD55\uD83C\uDF72\n", "https://www.youtube.com/embed/gEbbHlMXE9Y?si=edIqOpWQuFQEdJd7" ));
+        videoList.add(new Video("ماشا والدب \uD83D\uDE80\uD83C\uDF19 تلألئي أيتها النجوم \uD83D\uDC71\u200D♀️\uD83D\uDC3B مجموعة 13 ⏱ 30 دقيقة\n", "https://www.youtube.com/embed/33zJg42QJlQ?si=funDinTF6GZXqL6a" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+        videoList.add(new Video("Masha and the Bear - \uD83C\uDF1E\uD83C\uDFD6 Summer Holidays\uD83C\uDFD6\uD83C\uDF1E\n",
+                "https://www.youtube.com/embed/jCvSEuHms5M?si=GLjVHRBGHTNDygYQ" ));
+
+
+
 
         adapter.notifyDataSetChanged();
     }

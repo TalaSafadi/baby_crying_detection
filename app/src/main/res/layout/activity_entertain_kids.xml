@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="273dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="baby not eating well"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="327dp"
+            android:layout_height="329dp"
+            android:layout_marginTop="19dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="Keeping young children entertained can be challenging, especially on rainy days or when you're stuck at home. Simple activities like playing with blocks, reading books, or singing songs can be very engaging for infants and toddlers. Sensory play, such as playing with water or sand, can also be very stimulating and fun. Consider setting up a dedicated play area with age-appropriate toys and materials. Rotate toys regularly to keep things interesting. Outdoor activities, even in your backyard, can be a great way to keep your child active and engaged. Websites like &quot;BabyCenter&quot; and &quot;PBS Kids&quot; offer a variety of activities suitable for different age groups. Additionally, the &quot;Montessori Method&quot; provides numerous ideas for educational and engaging activities that promote independent play and learning.  "
+            android:textAlignment="center"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="336dp"
+            android:layout_height="261dp"
+            android:layout_marginTop="16dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/acme"
+            android:text="يمكن أن يكون إبقاء الأطفال الصغار مستمتعين تحديًا، خاصة في الأيام الممطرة أو عندما تكون في المنزل. الأنشطة البسيطة مثل اللعب بالمكعبات، قراءة الكتب، أو غناء الأغاني يمكن أن تكون ممتعة جدًا للأطفال الرضع والصغار. اللعب الحسي، مثل اللعب بالماء أو الرمل، يمكن أن يكون محفزًا وممتعًا للغاية. فكر في إنشاء منطقة لعب مخصصة مع ألعاب ومواد مناسبة للعمر. قم بتدوير الألعاب بانتظام للحفاظ على الاهتمام. الأنشطة الخارجية، حتى في الفناء الخلفي، يمكن أن تكون وسيلة رائعة للحفاظ على نشاط طفلك واهتمامه. مواقع مثل &quot;BabyCenter&quot; و&quot;PBS Kids&quot; تقدم مجموعة متنوعة من الأنشطة المناسبة لمختلف الفئات العمرية. بالإضافة إلى ذلك، توفر &quot;طريقة مونتيسوري&quot; العديد من الأفكار للأنشطة التعليمية والممتعة التي تعزز اللعب المستقل والتعلم.  "
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView27" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acme"
+            android:text="Below are videos to help you explore more about this topic "
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+        <WebView
+            android:id="@+id/video1"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView30" />
+
+        <WebView
+            android:id="@+id/video2"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video1" />
+
+        <WebView
+            android:id="@+id/video3"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

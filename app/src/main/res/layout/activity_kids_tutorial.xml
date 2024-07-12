@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="273dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Kids activity"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="331dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="15dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text=" The app includes a selection of music and audiobooks designed for children. These activities can help entertain and soothe your baby"
+            android:textAlignment="viewStart"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView33"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="344dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="25dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="The app also offers a library of cartoon videos suitable for children, providing educational and entertaining content, this feature need a Wi-Fi connection ."
+            android:textAlignment="viewStart"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView31"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.597"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="345dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/acme"
+            android:text="Both these features can be accessed from the home page , under children activity section "
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="21dp"
+            android:fontFamily="@font/adamina"
+            android:text="Cartoon Videos:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.155"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="47dp"
+            android:fontFamily="@font/adamina"
+            android:text="Music and Audiobooks:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="361dp"
+            android:layout_height="246dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31"
+            app:layout_constraintVertical_bias="1.0"
+            tools:srcCompat="@drawable/img_17" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

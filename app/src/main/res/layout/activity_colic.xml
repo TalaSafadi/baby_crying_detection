@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="273dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Managing Colic"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="323dp"
+            android:layout_height="314dp"
+            android:layout_marginTop="19dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="Colic can be very distressing for parents and babies alike. It is characterized by prolonged periods of crying, often in the late afternoon or evening. Ensure your baby isn’t hungry and try to keep them upright after feeding to reduce gas. Swaddling, gentle rocking, or using white noise can sometimes soothe a colicky baby. Avoid overstimulation by keeping the environment calm. If you’re struggling, don’t hesitate to reach out to your pediatrician for advice. They might recommend specific techniques or products such as anti-colic bottles. &quot;Mayo Clinic&quot; and &quot;The Colic Institute&quot; offer comprehensive advice on colic management. Some parents find success with probiotics or gripe water, but these should be used under the guidance of a healthcare provider.  "
+            android:textAlignment="center"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="326dp"
+            android:layout_height="263dp"
+            android:layout_marginTop="16dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/acme"
+            android:text="يمكن أن يكون المغص مرهقًا للغاية لكل من الآباء والأطفال. يتميز بفترات طويلة من البكاء، غالبًا في فترة ما بعد الظهر أو المساء. تأكد من أن طفلك ليس جائعًا وحاول إبقائه في وضعية عمودية بعد الرضاعة لتقليل الغازات. يمكن أحيانًا أن تهدئ الأطفال الذين يعانون من المغص بلفهم ببطانية بلطف، أو التأرجح بلطف، أو استخدام الضوضاء البيضاء. تجنب التحفيز الزائد من خلال الحفاظ على البيئة هادئة. إذا كنت تواجه صعوبة، لا تتردد في استشارة طبيب الأطفال للحصول على نصائح. قد يوصون بتقنيات أو منتجات محددة مثل زجاجات مكافحة المغص. &quot;موقع Mayo Clinic&quot; و&quot;The Colic Institute&quot; يقدمان نصائح شاملة حول إدارة المغص. بعض الآباء يجدون النجاح مع البروبيوتيك أو ماء الجريب، ولكن يجب استخدام هذه تحت إشراف مقدم الرعاية الصحية.  "
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView27" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acme"
+            android:text="Below are videos to help you explore more about this topic "
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+        <WebView
+            android:id="@+id/video1"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView30" />
+
+        <WebView
+            android:id="@+id/video2"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video1" />
+
+        <WebView
+            android:id="@+id/video3"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -16,6 +16,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,6 +52,7 @@ public class AudioRecordingActivity extends AppCompatActivity {
 
     private Button startButton;
     private TextView resultTextView;
+    private ImageView audioImg;
     private AudioRecord recorder;
     private boolean isRecording = false;
     private int bufferSize;
@@ -66,6 +68,7 @@ public class AudioRecordingActivity extends AppCompatActivity {
 
         startButton = findViewById(R.id.startButton);
         resultTextView = findViewById(R.id.resultTextView);
+        audioImg = findViewById(R.id.record);
 
         // Request RECORD_AUDIO permission
         ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION);
@@ -99,6 +102,8 @@ public class AudioRecordingActivity extends AppCompatActivity {
     private void startRecording() {
         isRecording = true;
         startButton.setText("Stop Recording");
+        audioImg.setImageResource(R.drawable.img_12);
+
         resultTextView.setText("Recording...");
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
@@ -121,6 +126,7 @@ public class AudioRecordingActivity extends AppCompatActivity {
     private void stopRecording() {
         isRecording = false;
         startButton.setText("Start Recording");
+        audioImg.setImageResource(R.drawable.img_1);
         resultTextView.setText("Processing...");
         if (recorderHandler != null) {
             recorderHandler.cancel(true);

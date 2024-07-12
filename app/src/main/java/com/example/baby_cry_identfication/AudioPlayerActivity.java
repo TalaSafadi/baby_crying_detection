@@ -79,7 +79,7 @@ public class AudioPlayerActivity extends AppCompatActivity {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = layoutInflater.inflate(R.layout.rowstories, parent, false);
 
-            TextView Title = row.findViewById(R.id.RowAudioTitle);
+            TextView Title = row.findViewById(R.id.tutorialtilte);
             TextView Description = row.findViewById(R.id.RowAirYear);
             ImageView Poster = row.findViewById(R.id.audioImage);
             ImageButton playButton = row.findViewById(R.id.AudioButton);

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="273dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Starting Solid Foods"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="304dp"
+            android:layout_height="345dp"
+            android:layout_marginTop="19dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="Introducing solid foods is a big milestone for your baby. Start with simple, single-ingredient foods like pureed vegetables or fruits. Avoid adding salt or sugar. Gradually introduce more textures and flavors as your baby gets used to eating solids. Always supervise your baby while eating to prevent choking. Offer a variety of foods to ensure balanced nutrition, and don't be discouraged if your baby refuses a food at first—it can take multiple tries before they accept it. If you have any concerns about food allergies or intolerances, consult your pediatrician. The &quot;World Health Organization&quot; provides guidelines on the introduction of complementary foods. Additionally, &quot;Solid Starts&quot; offers a comprehensive database of foods and how to introduce them safely to your baby.  "
+            android:textAlignment="center"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="324dp"
+            android:layout_height="286dp"
+            android:layout_marginTop="16dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/acme"
+            android:text="إدخال الأطعمة الصلبة يعد مرحلة كبيرة لطفلك. ابدأ بأطعمة بسيطة ومكون واحد مثل الخضروات المهروسة أو الفواكه. تجنب إضافة الملح أو السكر. قم بإدخال قوام ونكهات جديدة تدريجياً مع اعتياد طفلك على تناول الأطعمة الصلبة. دائمًا أشرف على طفلك أثناء تناول الطعام لمنع الاختناق. قدم مجموعة متنوعة من الأطعمة لضمان تغذية متوازنة، ولا تشعر بالإحباط إذا رفض طفلك الطعام في البداية - قد يتطلب الأمر عدة محاولات قبل أن يقبله. إذا كانت لديك أية مخاوف بشأن الحساسية الغذائية أو عدم التحمل، استشر طبيب الأطفال. توفر &quot;منظمة الصحة العالمية&quot; إرشادات حول تقديم الأطعمة المكملة. بالإضافة إلى ذلك، يوفر &quot;Solid Starts&quot; قاعدة بيانات شاملة للأطعمة وكيفية تقديمها بأمان لطفلك.  "
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView27" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acme"
+            android:text="Below are videos to help you explore more about this topic "
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+        <WebView
+            android:id="@+id/video1"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView30" />
+
+        <WebView
+            android:id="@+id/video2"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video1" />
+
+        <WebView
+            android:id="@+id/video3"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

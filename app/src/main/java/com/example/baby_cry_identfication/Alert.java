@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -19,9 +20,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Map;
+
 public class Alert extends Activity {
 
     private Vibrator vibrator;
+    private static final String TAG = "ProfileActivity";
+    private FirebaseFirestore db;
+    private SharedPreferences sharedPreferences;
+    private String email, childName, emergencyContactName, emergencyContactNumber;
     private MediaPlayer mediaPlayer;
     private AudioManager audioManager;
     private static final int PERMISSION_REQUEST_SEND_SMS = 0;
@@ -32,35 +46,42 @@ public class Alert extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert);
+        db = FirebaseFirestore.getInstance();
 
         // Find the buttons by their IDs
         Button startButton = findViewById(R.id.start_button);
         Button stopButton = findViewById(R.id.stop_button);
-
-        // Initialize Vibrator
-        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-        // Initialize MediaPlayer
         mediaPlayer = MediaPlayer.create(this, R.raw.crying);
+        sharedPreferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
+        email = sharedPreferences.getString("email", null);
 
+        if (email != null) {
+            fetchUserProfile();
+        } else {
+            Toast.makeText(this, "No email found in shared preferences", Toast.LENGTH_SHORT).show();
+        }
         // Initialize AudioManager
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-        // Start vibration, sound and SMS/Call timer on activity start
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+
+
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
         startVibration();
         setVolumeToMax();
         playSound();
+        startSMSAndCallTimer();
+        startVibration();
         startSMSAndCallTimer();
 
         // Set OnClickListener on the start button
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start vibrating, sound and SMS/Call timer when the start button is clicked
-                startVibration();
-                setVolumeToMax();
-                playSound();
-                startSMSAndCallTimer();
+                // Start vibrating and start SMS and call timer
+
             }
         });
 
@@ -68,12 +89,14 @@ public class Alert extends Activity {
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Stop vibrating and sound when the stop button is clicked
+                // Stop vibrating when the stop button is clicked
                 stopVibration();
                 stopSound();
             }
         });
     }
+
+    // Start vibrating continuously
 
     // Set the device volume to maximum
     private void setVolumeToMax() {
@@ -93,7 +116,6 @@ public class Alert extends Activity {
             vibrator.vibrate(new long[]{0, 1000}, 0);
         }
     }
-
     // Stop vibrating
     private void stopVibration() {
         if (vibrator != null) {
@@ -121,25 +143,45 @@ public class Alert extends Activity {
     }
 
     private void startSMSAndCallTimer() {
+
         new CountDownTimer(3000, 1000) {
+
             public void onTick(long millisUntilFinished) {
             }
 
             public void onFinish() {
                 sendSMS();
+                startCallTimer();
+            }
+        }.start();
+    }
+    private void startCallTimer() {
+
+        new CountDownTimer(3000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+            }
+
+            public void onFinish() {
+                // sendSMS();
                 makePhoneCall();
             }
         }.start();
     }
 
     private void sendSMS() {
-        String phoneNumber = "+970599506228";
-        String message = "Baby has been crying for a long time, parents cannot be reached. Please check on the baby. " + getLocation();
+        String phoneNumber = emergencyContactNumber;
+        String message = "This is the Angel Tears App. MR/MRS "+emergencyContactName +" have been listed as the emergency contact";
+        String message2 = "The baby "+ childName+ " has been crying for a prolonged period without any response from the parents. ";
+        String message3 = " If the alert persists after this message, the app will place a call to this number to grab your attention to the situation. ";
+
 
         if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED &&
                 checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+            smsManager.sendTextMessage(phoneNumber, null, message2, null, null);
+            smsManager.sendTextMessage(phoneNumber, null, message3, null, null);
             Log.d("Alert", "SMS sent to: " + phoneNumber);
             Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_LONG).show();
         } else {
@@ -151,7 +193,7 @@ public class Alert extends Activity {
 
     // Make phone call
     private void makePhoneCall() {
-        String phoneNumber = "+970599506228";
+        String phoneNumber = emergencyContactNumber;
 
         if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PERMISSION_REQUEST_CALL_PHONE);
@@ -192,6 +234,7 @@ public class Alert extends Activity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
                     grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 sendSMS();
+
                 Toast.makeText(getApplicationContext(), "Permission denied. SMS not sent.", Toast.LENGTH_LONG).show();
             }
         } else if (requestCode == PERMISSION_REQUEST_CALL_PHONE) {
@@ -202,14 +245,37 @@ public class Alert extends Activity {
             }
         }
     }
+    private void fetchUserProfile() {
+        Log.d(TAG, "Email used for fetching profile: " + email); // Log the email
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Release the MediaPlayer when the activity is destroyed
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
+        if (email != null && !email.isEmpty()) {
+            db.collection("Parents").document(email).get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document.exists()) {
+                                    // Populate the EditTexts with the data
+                                    populateProfileFields(document.getData());
+                                } else {
+                                    Log.d(TAG, "No such document");
+                                }
+                            } else {
+                                Log.d(TAG, "get failed with ", task.getException());
+                            }
+                        }
+                    });
+        } else {
+            Toast.makeText(this, "No email found in shared preferences", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void populateProfileFields(Map<String, Object> data) {
+        childName=(String) data.get("ChildNmae");
+        ;
+        emergencyContactName= (String) data.get("Emergency_contactName");
+        emergencyContactNumber= (String) data.get("Emergency_contactNumber");
+
     }
 }

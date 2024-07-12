@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="273dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="baby not eating well"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="327dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="19dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="Sleep is crucial for your baby's development, but many new parents struggle with getting their little ones to sleep through the night. Common reasons for sleep issues include hunger, discomfort, or the need for a diaper change. Establishing a bedtime routine can be incredibly helpful. This might include a warm bath, a bedtime story, and gentle rocking. It's also important to create a calm and soothing sleep environment, free from loud noises and bright lights. Consistency is key, so try to put your baby to bed at the same time every night. If your baby is still having trouble sleeping, consider consulting a pediatrician or a sleep specialist. Websites like the &quot;Baby Sleep Site&quot; and &quot;HealthyChildren.org&quot; offer detailed advice and support. Additionally, the &quot;Ferber Method&quot; and &quot;Happiest Baby on the Block&quot; by Dr. Harvey Karp are popular resources that provide effective sleep training techniques.  "
+            android:textAlignment="center"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="340dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="16dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/acme"
+            android:text="النوم ضروري لنمو طفلك، لكن العديد من الآباء الجدد يواجهون صعوبة في جعل أطفالهم ينامون طوال الليل. الأسباب الشائعة لمشاكل النوم تشمل الجوع، عدم الراحة، أو الحاجة إلى تغيير الحفاض. من المفيد جداً وضع روتين لوقت النوم. يمكن أن يشمل ذلك حمام دافئ، قراءة قصة قبل النوم، والتأرجح بلطف. من المهم أيضًا إنشاء بيئة نوم هادئة ومهدئة، خالية من الضوضاء العالية والأضواء الساطعة. الثبات هو المفتاح، لذا حاول وضع طفلك في السرير في نفس الوقت كل ليلة. إذا كان طفلك لا يزال يواجه صعوبة في النوم، فكر في استشارة طبيب الأطفال أو اختصاصي النوم. مواقع مثل &quot;Baby Sleep Site&quot; و&quot;HealthyChildren.org&quot; تقدم نصائح ودعم مفصل. بالإضافة إلى ذلك، فإن &quot;طريقة فيربر&quot; و&quot;أسعد طفل على الكوكب&quot; للدكتور هارفي كارب هي موارد شائعة تقدم تقنيات فعالة لتدريب النوم.  "
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView27" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acme"
+            android:text="Below are videos to help you explore more about this topic "
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+        <WebView
+            android:id="@+id/video1"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView30" />
+
+        <WebView
+            android:id="@+id/video2"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video1" />
+
+        <WebView
+            android:id="@+id/video3"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

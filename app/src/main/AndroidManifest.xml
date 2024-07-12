@@ -36,6 +36,63 @@
         android:theme="@style/Theme.Baby_cry_Identfication"
         tools:targetApi="31">
         <activity
+            android:name=".AppFeatures_tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".Sleep_tracking_Tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".Audio_Detection_Tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".Kids_activity_Tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".Forget_password_Tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".Alert_Tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".FingerprintTutorial"
+            android:exported="false" />
+        <activity
+            android:name=".babyproofying"
+            android:exported="false" />
+        <activity
+            android:name=".solidFood"
+            android:exported="false" />
+        <activity
+            android:name=".handel_tantrumes"
+            android:exported="false" />
+        <activity
+            android:name=".babyMilestones"
+            android:exported="false" />
+        <activity
+            android:name=".bathing"
+            android:exported="false" />
+        <activity
+            android:name=".colic"
+            android:exported="false" />
+        <activity
+            android:name=".teething"
+            android:exported="false" />
+        <activity
+            android:name=".entertain_kids"
+            android:exported="false" />
+        <activity
+            android:name=".Baby_not_Eating_Well"
+            android:exported="false" />
+        <activity
+            android:name=".whyBabyNotSleeping"
+            android:exported="false" />
+        <activity
+            android:name=".tips_and_tricks"
+            android:exported="false" />
+        <activity
+            android:name=".totorial"
+            android:exported="false" />
+        <activity
             android:name=".AudioRecordingActivity"
             android:exported="false" />
 
@@ -43,7 +100,7 @@
             android:name=".AudioDetectionService"
             android:enabled="true"
             android:exported="true"
-            android:foregroundServiceType="microphone"></service>
+            android:foregroundServiceType="microphone" />
 
         <activity
             android:name=".PopupSleep"

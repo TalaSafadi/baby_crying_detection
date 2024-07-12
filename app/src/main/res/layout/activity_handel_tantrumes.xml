@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="316dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="How to Handle Tantrums"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="323dp"
+            android:layout_height="314dp"
+            android:layout_marginTop="19dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="Tantrums can start as early as 1 year old and are a normal part of development. They often occur because toddlers can’t express their needs or feelings through words yet. Stay calm and try to understand the cause of the tantrum. Offer comfort and distract them with a toy or activity. Consistency and patience are key. Create a safe space where your child can calm down. Avoid giving in to tantrums as it can reinforce the behavior. If tantrums are severe or frequent, it may be helpful to consult with a pediatrician or child psychologist. For more strategies, &quot;Zero to Three&quot; and &quot;HealthyChildren.org&quot; have excellent resources on handling tantrums effectively. Additionally, books like &quot;The Whole-Brain Child&quot; by Daniel J. Siegel and Tina Payne Bryson provide insights into understanding and managing tantrums.  "
+            android:textAlignment="center"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="326dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="16dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/acme"
+            android:text="يمكن أن تبدأ نوبات الغضب في وقت مبكر من عمر السنة الأولى وهي جزء طبيعي من التطور. غالبًا ما تحدث لأن الأطفال الصغار لا يستطيعون التعبير عن احتياجاتهم أو مشاعرهم بالكلمات بعد. ابق هادئًا وحاول فهم سبب النوبة. قدم لهم الراحة وحاول تشتيتهم بلعبة أو نشاط. الثبات والصبر هما المفتاح. أنشئ مساحة آمنة حيث يمكن لطفلك أن يهدأ. تجنب الاستسلام للنوبات لأنها يمكن أن تعزز السلوك. إذا كانت النوبات شديدة أو متكررة، فقد يكون من المفيد استشارة طبيب الأطفال أو أخصائي نفسي للأطفال. للحصول على استراتيجيات أكثر، توفر &quot;Zero to Three&quot; و&quot;HealthyChildren.org&quot; موارد ممتازة حول التعامل مع نوبات الغضب بفعالية. بالإضافة إلى ذلك، توفر كتب مثل &quot;الطفل صاحب الدماغ الكامل&quot; لدانيال ج. سيجل وتينا باين بريسون رؤى حول فهم وإدارة نوبات الغضب.  "
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView27" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acme"
+            android:text="Below are videos to help you explore more about this topic "
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+        <WebView
+            android:id="@+id/video1"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView30" />
+
+        <WebView
+            android:id="@+id/video2"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video1" />
+
+        <WebView
+            android:id="@+id/video3"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

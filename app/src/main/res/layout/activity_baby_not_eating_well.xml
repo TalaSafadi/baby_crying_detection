@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_9"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="414dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="19dp"
+            android:background="@color/Dark_purple"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="273dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="baby not eating well"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.453"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="323dp"
+            android:layout_height="314dp"
+            android:layout_marginTop="19dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/alata"
+            android:text="It can be worrying when your baby isn't eating as expected. Sometimes, it’s just a phase or a sign that they’re teething. Ensure you're offering a variety of foods and textures as they start solid foods. Remember, each baby is different—some might prefer purees, while others might enjoy finger foods. It’s important to be patient and keep mealtime stress-free. Create a positive eating environment by eating together as a family and encouraging self-feeding. If your baby is consistently refusing food, consult your pediatrician to rule out any underlying issues. Websites like &quot;HealthyChildren.org&quot; and books like &quot;Baby-Led Weaning&quot; by Gill Rapley and Tracey Murkett provide excellent guidance on infant nutrition. Additionally, &quot;Solid Starts&quot; offers a comprehensive database of foods and how to introduce them safely to your baby.  "
+            android:textAlignment="center"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="327dp"
+            android:layout_height="284dp"
+            android:layout_marginTop="16dp"
+            android:background="#FAF9F9"
+            android:fontFamily="@font/acme"
+            android:text="قد يكون من المقلق عندما لا يأكل طفلك كما هو متوقع. في بعض الأحيان، يكون ذلك مجرد مرحلة أو علامة على التسنين. تأكد من تقديم مجموعة متنوعة من الأطعمة والقوام عندما يبدأ في تناول الأطعمة الصلبة. تذكر أن كل طفل يختلف عن الآخر - بعضهم قد يفضل الأطعمة المهروسة بينما قد يستمتع آخرون بالأطعمة التي يمكنهم الإمساك بها بأيديهم. من المهم أن تكون صبورًا وتحافظ على وقت الطعام خاليًا من التوتر. أنشئ بيئة إيجابية لتناول الطعام من خلال تناول الطعام معًا كعائلة وتشجيع الطفل على إطعام نفسه. إذا كان طفلك يرفض الطعام باستمرار، استشر طبيب الأطفال لاستبعاد أي مشاكل أساسية. مواقع مثل &quot;HealthyChildren.org&quot; وكتب مثل &quot;الفطام بقيادة الطفل&quot; لجيل رابلي وتراسي موركيت توفر إرشادات ممتازة حول تغذية الرضع. بالإضافة إلى ذلك، &quot;Solid Starts&quot; يقدم قاعدة بيانات شاملة للأطعمة وكيفية تقديمها بأمان لطفلك.  "
+            android:textAlignment="center"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView27" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/acme"
+            android:text="Below are videos to help you explore more about this topic "
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView28" />
+
+        <WebView
+            android:id="@+id/video1"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView30" />
+
+        <WebView
+            android:id="@+id/video2"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video1" />
+
+        <WebView
+            android:id="@+id/video3"
+            android:layout_width="337dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="18dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/video2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

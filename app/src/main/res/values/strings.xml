@@ -3,40 +3,80 @@
     <string name="app_name2">Angel Tears</string>
     <string name="Login">Login</string>
     <string name="Sign_up">Sign Up</string>
-    <string name="notParent">Not a Parent ? Login as </string>
-    <string name="notgurdian">Not a Gurdian ? Login as </string>
+    <string name="notParent">Not a Parent? Login as </string>
+    <string name="notgurdian">Not a Guardian? Login as </string>
     <string name="Parent">Parent</string>
-    <string name="Gurdian">Gurdian</string>
-    <string name="secoundSlogen">keeping your baby safe
-and cared for. so you can relax </string>
-    <string name="LoginParent"> Login as Parent</string>
-    <string name="LoginGaurdian"> Login as gurdian</string>
+    <string name="Gurdian">Guardian</string>
+    <string name="secoundSlogen">keeping your baby safe and cared for, so you can relax</string>
+    <string name="LoginParent">Login as Parent</string>
+    <string name="LoginGaurdian">Login as Guardian</string>
     <string name="story1EN">The Stubborn Baby Elephant</string>
-    <string name="story1Ar">الفيل الصغير العنيد </string>
-    <string name="sleepnoiseEN">sleep noise</string>
-    <string name="ForgetPassword">Forget Password? </string>
-    <string name="StopAlert">Stop AlERT </string>
-    <string name="listen">listen </string>
-    <string name="track_sleep">Sleep Tracker </string>
-    <string name="Add_Sleep_Data">Add Sleep Data </string>
-    <string name="SignUp_page2">Almost there just a few more steps </string>
+    <string name="story1Ar">الفيل الصغير العنيد</string>
+    <string name="sleepnoiseEN">Sleep noise</string>
+    <string name="ForgetPassword">Forget Password?</string>
+    <string name="StopAlert">Stop ALERT</string>
+    <string name="listen">Listen</string>
+    <string name="track_sleep">Sleep Tracker</string>
+    <string name="Add_Sleep_Data">Add Sleep Data</string>
+    <string name="SignUp_page2">Almost there, just a few more steps</string>
     <string name="Child_Name">Child Name</string>
     <string name="Child_Age">Child Age</string>
     <string name="Emergency_Contact_Number">Emergency Contact Number</string>
     <string name="Emergency_Contact_Name">Emergency Contact Name</string>
     <string name="Why_all_this_info">Why we need this information</string>
     <string name="Parent_Name">Parent Name</string>
-    <string name="Parent_Email"> Login Email</string>
+    <string name="Parent_Email">Login Email</string>
     <string name="Parent_Password">Password</string>
     <string name="Parent_Phone_Number">Parent Number</string>
     <string name="sigup_text">Create a new Account</string>
-    <string name="Hello">Hello! </string>
+    <string name="Hello">Hello!</string>
     <string name="Totorial">Full App Tutorial</string>
-    <string name="Open_Totorial">begin</string>
-    <string name="List_music">List of caming music for the baby</string>
-    <string name="List_stories">list of educational stories in arabic and english</string>
-    <string name="music">Kids &amp; infent songs</string>
+    <string name="Open_Totorial">Begin</string>
+    <string name="List_music">List of calming music for the baby</string>
+    <string name="List_stories">List of educational stories in Arabic and English</string>
+    <string name="music">Kids &amp; infant songs</string>
     <string name="stories">Kids stories</string>
+    <string name="AppTortial">App Tutorial</string>
+    <string name="ReadMore">Read More</string>
+    <string name="CommenQuestions">Common Questions</string>
+    <string name="BabyMile_stones">Baby Milestones</string>
+
+    <string name="app_features">
+
+        <b>Main Features</b><br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>\n
+         <br/>
+        <br/>
+         <b>User Profile Creation:</b><br/>\n
+         Allow parents and caregivers to create personalized profiles.<br/>
+        <b>Emergency Contact:</b><br/>\n
+        Easy and quick contact with support, emergency services, or designated contacts.<br/><br/>\n
+        <b>Sound Detection:</b><br/>\n
+        Continuous monitoring of the environment for relevant audio notifications, focusing on baby cries.<br/><br/>\n
+        <b>Real-time Analysis:</b><br/>\n
+         Identifies and classifies baby cries effectively and quickly using an ML model on the mobile device.<br/>\n
+         Noise cancellation techniques to recognize the child’s voice within disturbances.<br/><br/>\n
+        <b>Alert Generation:</b><br/>\n
+        Instant alerts and notifications to the parent or guardian when the baby cries.<br/>\n
+        Contact emrgency parent  when alerts arent being responded to <br/><br/>\n
+        <b>Additional Features</b><br/>\n
+         <b>Kids Activities:</b><br/>\n
+         Engaging activities designed to entertain and educate children.<br/>\n
+        <b>Sleep Tracking:</b><br/>\n
+         Monitors and records the baby’s sleep patterns.<br/>\n
+         Provides insights and recommendations for improving sleep quality.<br/><br/>\n\n
+         <b>Tips and Tricks:</b><br/>\n
+         Helpful advice and tips for parents on various aspects of child care.<br/>\n
+
+</string>
+
+
+
 
 
 </resources>

@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/img_27" />
 
     <TextView
-        android:id="@+id/RowAudioTitle"
+        android:id="@+id/tutorialtilte"
         android:layout_width="209dp"
         android:layout_height="33dp"
         android:layout_alignParentTop="true"

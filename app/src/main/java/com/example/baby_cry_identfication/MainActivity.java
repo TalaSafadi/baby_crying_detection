@@ -1,9 +1,12 @@
 package com.example.baby_cry_identfication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private CustomAdaptor adaptor;
     private ArrayList<Activities> activitiesList = new ArrayList<>();
     private TextView userNameMain;
+    private ImageButton Menu;
+    Button profileBtn;
+    Button homeBtn;
+    private Button logout;
+    private DrawerLayout drawerLayout;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +42,19 @@ public class MainActivity extends AppCompatActivity {
         // Initialize views
         listView = findViewById(R.id.listViewMain);
         userNameMain = findViewById(R.id.UserNameMain);
-        Button tutorialButton = findViewById(R.id.totorial);
+        Button tutorialButton = findViewById(R.id.totorialgo);
         ImageButton sleepButton = findViewById(R.id.sleepbutton);
-        ImageButton AudioButton = findViewById(R.id.tips);
+        ImageButton AudioButton = findViewById(R.id.audioDetector);
         ImageButton profileButton = findViewById(R.id.profile);
+        Menu = findViewById(R.id.MenuButton);
+        profileBtn = findViewById(R.id.ProfilePage);
+        homeBtn = findViewById(R.id.homePage);
+        logout = findViewById(R.id.logout);
+        drawerLayout = findViewById(R.id.MenuMianPage);
+
+
+
+
 
         // Set up custom adapter
         adaptor = new CustomAdaptor(this, activitiesList);
@@ -49,12 +68,26 @@ public class MainActivity extends AppCompatActivity {
         adaptor.notifyDataSetChanged();
 
         // Set click listeners for buttons
-        tutorialButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
-        sleepButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SleepTrackerActivity.class)));
+        tutorialButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, totorial.class)));
+        sleepButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Alert.class)));
         AudioButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AudioRecordingActivity.class)));
         profileButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, profile.class)));
+        Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNavigationDrawer();
+            }
+        });
     }
 
+    private void openNavigationDrawer() {
+        DrawerLayout drawerLayout = findViewById(R.id.MenuMianPage);
+        if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+            drawerLayout.closeDrawer(Gravity.RIGHT);
+        } else {
+            drawerLayout.openDrawer(Gravity.RIGHT);
+        }
+    }
     public class CustomAdaptor extends ArrayAdapter<Activities> {
         private Context context;
         private ArrayList<Activities> activitiesList;
