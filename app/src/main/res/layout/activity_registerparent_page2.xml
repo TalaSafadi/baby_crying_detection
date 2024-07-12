@@ -97,7 +97,7 @@
         android:layout_width="352dp"
         android:layout_height="58dp"
         android:background="@drawable/botton_background_parent1"
-        android:hint="      Enter the number with Extention"
+        android:hint="start with tel formate , eg +972"
         android:inputType="text"
         android:paddingLeft="16dp"
         android:textAlignment="textStart"

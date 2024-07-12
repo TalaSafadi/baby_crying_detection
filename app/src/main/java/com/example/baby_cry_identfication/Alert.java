@@ -41,6 +41,8 @@ public class Alert extends Activity {
     private static final int PERMISSION_REQUEST_SEND_SMS = 0;
     private static final int PERMISSION_REQUEST_CALL_PHONE = 1;
     private static final int PERMISSION_REQUEST_ACCESS_LOCATION = 2;
+    private CountDownTimer smsTimer;
+    private CountDownTimer callTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,20 +62,14 @@ public class Alert extends Activity {
         } else {
             Toast.makeText(this, "No email found in shared preferences", Toast.LENGTH_SHORT).show();
         }
+
         // Initialize AudioManager
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-
-
-        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         startVibration();
         setVolumeToMax();
         playSound();
-        startSMSAndCallTimer();
-        startVibration();
         startSMSAndCallTimer();
 
         // Set OnClickListener on the start button
@@ -81,7 +77,10 @@ public class Alert extends Activity {
             @Override
             public void onClick(View v) {
                 // Start vibrating and start SMS and call timer
-
+                startVibration();
+                setVolumeToMax();
+                playSound();
+                startSMSAndCallTimer();
             }
         });
 
@@ -89,14 +88,12 @@ public class Alert extends Activity {
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Stop vibrating when the stop button is clicked
                 stopVibration();
                 stopSound();
+                stopSMSAndCallTimers();
             }
         });
     }
-
-    // Start vibrating continuously
 
     // Set the device volume to maximum
     private void setVolumeToMax() {
@@ -116,6 +113,7 @@ public class Alert extends Activity {
             vibrator.vibrate(new long[]{0, 1000}, 0);
         }
     }
+
     // Stop vibrating
     private void stopVibration() {
         if (vibrator != null) {
@@ -143,9 +141,7 @@ public class Alert extends Activity {
     }
 
     private void startSMSAndCallTimer() {
-
-        new CountDownTimer(3000, 1000) {
-
+        smsTimer = new CountDownTimer(3000, 1000) {
             public void onTick(long millisUntilFinished) {
             }
 
@@ -155,26 +151,32 @@ public class Alert extends Activity {
             }
         }.start();
     }
+
     private void startCallTimer() {
-
-        new CountDownTimer(3000, 1000) {
-
+        callTimer = new CountDownTimer(3000, 1000) {
             public void onTick(long millisUntilFinished) {
             }
 
             public void onFinish() {
-                // sendSMS();
                 makePhoneCall();
             }
         }.start();
     }
 
+    private void stopSMSAndCallTimers() {
+        if (smsTimer != null) {
+            smsTimer.cancel();
+        }
+        if (callTimer != null) {
+            callTimer.cancel();
+        }
+    }
+
     private void sendSMS() {
         String phoneNumber = emergencyContactNumber;
-        String message = "This is the Angel Tears App. MR/MRS "+emergencyContactName +" have been listed as the emergency contact";
-        String message2 = "The baby "+ childName+ " has been crying for a prolonged period without any response from the parents. ";
+        String message = "This is the Angel Tears App. MR/MRS " + emergencyContactName + " have been listed as the emergency contact";
+        String message2 = "The baby " + childName + " has been crying for a prolonged period without any response from the parents. ";
         String message3 = " If the alert persists after this message, the app will place a call to this number to grab your attention to the situation. ";
-
 
         if (checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED &&
                 checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -234,7 +236,7 @@ public class Alert extends Activity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
                     grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 sendSMS();
-
+            } else {
                 Toast.makeText(getApplicationContext(), "Permission denied. SMS not sent.", Toast.LENGTH_LONG).show();
             }
         } else if (requestCode == PERMISSION_REQUEST_CALL_PHONE) {
@@ -245,6 +247,7 @@ public class Alert extends Activity {
             }
         }
     }
+
     private void fetchUserProfile() {
         Log.d(TAG, "Email used for fetching profile: " + email); // Log the email
 
@@ -272,10 +275,8 @@ public class Alert extends Activity {
     }
 
     private void populateProfileFields(Map<String, Object> data) {
-        childName=(String) data.get("ChildNmae");
-        ;
-        emergencyContactName= (String) data.get("Emergency_contactName");
-        emergencyContactNumber= (String) data.get("Emergency_contactNumber");
-
+        childName = (String) data.get("ChildName");
+        emergencyContactName = (String) data.get("Emergency_contactName");
+        emergencyContactNumber = (String) data.get("Emergency_contactNumber");
     }
 }

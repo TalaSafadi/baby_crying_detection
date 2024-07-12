@@ -83,7 +83,7 @@ public class LoginPage extends AppCompatActivity {
         loadData();
 
         if (flag) {
-            Intent intent = new Intent(LoginPage.this, Alert.class);
+            Intent intent = new Intent(LoginPage.this, MainActivity.class);
             startActivity(intent);
         }
 

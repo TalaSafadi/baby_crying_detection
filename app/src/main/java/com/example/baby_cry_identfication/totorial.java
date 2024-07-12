@@ -30,7 +30,6 @@ public class totorial extends AppCompatActivity {
         // Add items to tutorial list
         tutorialList.add(new Tutorial("App features ", AppFeatures_tutorial.class));
         tutorialList.add(new Tutorial("Alerts & Audio Detection ", Alert_Tutorial.class));
-        tutorialList.add(new Tutorial("Sleep tracking",  FingerprintTutorial.class));
         tutorialList.add(new Tutorial("Kids activity",  Kids_activity_Tutorial.class));
         tutorialList.add(new Tutorial("Forget password",  Forget_password_Tutorial.class));
 

@@ -30,48 +30,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.069" />
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="411dp"
-            android:layout_height="376dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
 
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:text="Children activity"
-                android:textColor="@color/text_gray"
-                android:textSize="20dp" />
-
-            <ListView
-                android:id="@+id/listViewMain"
-                android:layout_width="match_parent"
-                android:layout_height="288dp">
-
-            </ListView>
-
-        </LinearLayout>
 
         <TextView
             android:id="@+id/UserNameMain"
             android:layout_width="143dp"
             android:layout_height="22dp"
+            android:fontFamily="@font/alfa_slab_one"
             android:text="user"
             android:textColor="@color/text_gray"
+            android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.138"
+            app:layout_constraintHorizontal_bias="0.208"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.138" />
+            app:layout_constraintVertical_bias="0.128" />
 
         <ImageButton
             android:id="@+id/MenuButton"
@@ -161,11 +135,11 @@
             android:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.26"
+            app:layout_constraintHorizontal_bias="0.252"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.457"
-            app:srcCompat="@drawable/dino_egg" />
+            app:layout_constraintVertical_bias="0.454"
+            app:srcCompat="@drawable/sleep" />
 
         <View
             android:id="@+id/view12"
@@ -181,16 +155,16 @@
 
         <ImageButton
             android:id="@+id/profile"
-            android:layout_width="46dp"
-            android:layout_height="40dp"
+            android:layout_width="47dp"
+            android:layout_height="50dp"
             android:background="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintHorizontal_bias="0.788"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.454"
-            app:srcCompat="@drawable/dino_egg" />
+            app:layout_constraintVertical_bias="0.457"
+            app:srcCompat="@drawable/tips" />
 
         <View
             android:id="@+id/view13"
@@ -206,16 +180,16 @@
 
         <ImageButton
             android:id="@+id/audioDetector"
-            android:layout_width="46dp"
-            android:layout_height="40dp"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
             android:background="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintHorizontal_bias="0.527"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.454"
-            app:srcCompat="@drawable/dino_egg" />
+            app:layout_constraintVertical_bias="0.458"
+            app:srcCompat="@drawable/mic" />
 
         <TextView
             android:id="@+id/textView15"
@@ -254,12 +228,84 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:text="Sleep tracker"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.255"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.492" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:text="Audio Detection"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.527"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.493" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:text="@string/Tips"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.797"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.495" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="411dp"
+            android:layout_height="376dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Children activity"
+                android:textColor="@color/text_gray"
+                android:textSize="20dp" />
+
+            <ListView
+                android:id="@+id/listViewMain"
+                android:layout_width="match_parent"
+                android:layout_height="288dp">
+
+            </ListView>
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"
+        android:background="@drawable/img_13"
 
         app:headerLayout="@layout/nav_drawer_header">
 
@@ -267,39 +313,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="40dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/profile_icones" />
-
-                <Button
-                    android:id="@+id/homePage"
-                    android:layout_marginLeft="55dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00FFFFFF"
-                    android:text="Home Page"
-
-                    android:textColor="@color/purple_white"
-                    android:textSize="14dp" />
 
 
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -319,7 +341,7 @@
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
                     android:text="Profile Page"
-                    android:textColor="@color/purple_white" />
+                    android:textColor="@color/text_gray" />
 
 
             </LinearLayout>
@@ -337,7 +359,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_width="40dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/icons_logout" />
+                    android:src="@drawable/icones_logout" />
 
                 <Button
                     android:id="@+id/logout"
@@ -345,14 +367,14 @@
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
                     android:text="Logout"
-                    android:textColor="@color/purple_white"
+                    android:textColor="@color/text_gray"
                     android:textSize="14sp" />
 
 
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
-                android:layout_height="190dp" />
+                android:layout_height="250dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -367,6 +389,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:orientation="vertical">
                     <View
                         android:layout_width="match_parent"
@@ -378,6 +401,8 @@
                         android:layout_marginLeft="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_gray"
+
                         />
 
                     <TextView
@@ -385,6 +410,8 @@
                         android:layout_marginLeft="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/text_gray"
+
                         />
 
                 </LinearLayout>

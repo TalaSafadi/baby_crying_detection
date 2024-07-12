@@ -38,8 +38,10 @@
     <string name="stories">Kids stories</string>
     <string name="AppTortial">App Tutorial</string>
     <string name="ReadMore">Read More</string>
+    <string name="Tips">Tips &amp; tricks </string>
     <string name="CommenQuestions">Common Questions</string>
     <string name="BabyMile_stones">Baby Milestones</string>
+
 
     <string name="app_features">
 
@@ -49,32 +51,32 @@
         <br/>
         <br/>
         <br/>
-        <br/>\n
+        <br/>\n\n
          <br/>
-        <br/>
-         <b>User Profile Creation:</b><br/>\n
-         Allow parents and caregivers to create personalized profiles.<br/>
-        <b>Emergency Contact:</b><br/>\n
-        Easy and quick contact with support, emergency services, or designated contacts.<br/><br/>\n
-        <b>Sound Detection:</b><br/>\n
-        Continuous monitoring of the environment for relevant audio notifications, focusing on baby cries.<br/><br/>\n
-        <b>Real-time Analysis:</b><br/>\n
+
+         <b>User Profile Creation:</b><br/>\n\n
+         Allow parents and caregivers to create personalized profiles.<br/> \n\n
+        <b>Emergency Contact:</b><br/>\n\n
+
+        Easy and quick contact with support, emergency services, or designated contacts.<br/><br/>\n\n
+        <b>Sound Detection:</b><br/>\n\n
+        Continuous monitoring of the environment for relevant audio notifications, focusing on baby cries.<br/><br/>\n\n
+        <b>Real-time Analysis:</b><br/>\n\n
          Identifies and classifies baby cries effectively and quickly using an ML model on the mobile device.<br/>\n
-         Noise cancellation techniques to recognize the child’s voice within disturbances.<br/><br/>\n
-        <b>Alert Generation:</b><br/>\n
+         Noise cancellation techniques to recognize the child’s voice within disturbances.<br/><br/>\n\n
+        <b>Alert Generation:</b><br/>\n\n
         Instant alerts and notifications to the parent or guardian when the baby cries.<br/>\n
-        Contact emrgency parent  when alerts arent being responded to <br/><br/>\n
-        <b>Additional Features</b><br/>\n
-         <b>Kids Activities:</b><br/>\n
-         Engaging activities designed to entertain and educate children.<br/>\n
-        <b>Sleep Tracking:</b><br/>\n
+        Contact emrgency parent  when alerts arent being responded to <br/><br/>\n\n
+        <b>Additional Features</b><br/>\n\n
+         <b>Kids Activities:</b><br/>\n\n
+         Engaging activities designed to entertain and educate children.<br/>\n\n
+        <b>Sleep Tracking:</b><br/>\n\n
          Monitors and records the baby’s sleep patterns.<br/>\n
          Provides insights and recommendations for improving sleep quality.<br/><br/>\n\n
-         <b>Tips and Tricks:</b><br/>\n
+         <b>Tips and Tricks:</b><br/>\n\n
          Helpful advice and tips for parents on various aspects of child care.<br/>\n
 
 </string>
-
 
 
 

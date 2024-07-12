@@ -13,110 +13,108 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar3"
-            android:layout_width="414dp"
-            android:layout_height="78dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="19dp"
             android:background="@color/Dark_purple"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:layout_constraintBottom_toTopOf="@+id/textView27"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/textView18"
-            android:layout_width="341dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/alfa_slab_one"
             android:text="Alerts and Audio Detection"
             android:textAlignment="center"
             android:textColor="@color/light_blue"
-            android:textSize="22dp"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteY="16dp" />
 
         <TextView
             android:id="@+id/textView27"
-            android:layout_width="331dp"
-            android:layout_height="80dp"
+            android:layout_width="360dp"
+            android:layout_height="150dp"
             android:layout_marginTop="100dp"
-            android:layout_marginBottom="15dp"
             android:background="#FAF9F9"
             android:fontFamily="@font/alata"
-            android:text=" The app includes a selection of music and audiobooks designed for children. These activities can help entertain and soothe your baby"
+            android:padding="16dp"
+            android:text="The app uses the phone mic to recode audio so that it can detect crying . the app send the audio to a secure server to be analyze then it gets deleted after that . you can put the app in the background and continue using the phone as normal , and the app will detect the baby cries no mater how faint "
             android:textAlignment="viewStart"
             android:textSize="13dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView33"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+            app:layout_constraintTop_toBottomOf="@id/textView18" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:text="Audio Detection"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="112dp" />
 
         <TextView
             android:id="@+id/textView32"
-            android:layout_width="344dp"
-            android:layout_height="68dp"
-            android:layout_marginTop="21dp"
+            android:layout_width="359dp"
+            android:layout_height="141dp"
             android:background="#FAF9F9"
             android:fontFamily="@font/alata"
-            android:text="The app also offers a library of cartoon videos suitable for children, providing educational and entertaining content, this feature need a Wi-Fi connection ."
+            android:padding="16dp"
+            android:text="If crying is detect the app will show an alert display accompanied by loud noise and vibrating . the alert is not stoped after a long period of time an SMS will be send to the registered emergency contact  , if the alert after that is still active the app will make a call to the emergency contact to grab their attention"
             android:textAlignment="viewStart"
             android:textSize="13dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.597"
+            app:layout_constraintHorizontal_bias="0.519"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+            tools:layout_editor_absoluteY="349dp" />
 
         <TextView
             android:id="@+id/textView33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="21dp"
             android:fontFamily="@font/adamina"
             android:text="Alert"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView32"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.155"
+            app:layout_constraintHorizontal_bias="0.157"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="38dp"
-            android:layout_marginBottom="47dp"
-            android:fontFamily="@font/adamina"
-            android:text="Audio Detection"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textView27"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.216"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
         <ImageView
             android:id="@+id/imageView13"
-            android:layout_width="361dp"
-            android:layout_height="246dp"
-            android:layout_marginTop="29dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:contentDescription="Alert Image"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView32"
-            tools:srcCompat="@drawable/img_17" />
+            app:srcCompat="@drawable/img_17" />
 
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:contentDescription="Alert Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13"
+            app:srcCompat="@drawable/img_17" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

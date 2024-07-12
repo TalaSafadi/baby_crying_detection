@@ -67,8 +67,12 @@ public class RegisterParent_page extends AppCompatActivity {
             Toast.makeText(RegisterParent_page.this, "Password must be at least 6 characters long.", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (!number.startsWith("+97")) {
+            Toast.makeText(RegisterParent_page.this, "Emergency contact number must start with +97.", Toast.LENGTH_SHORT).show();
+            return;}
 
-        mAuth.createUserWithEmailAndPassword(email, password)
+
+            mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         // Create a map to store user data

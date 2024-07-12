@@ -70,6 +70,11 @@ public class RegisterParentPage2 extends AppCompatActivity {
             Toast.makeText(RegisterParentPage2.this, "Please fill all fields.", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (!emergencyContactNumber.startsWith("+97")) {
+            Toast.makeText(RegisterParentPage2.this, "Emergency contact number must start with +97.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
 
         Map<String, Object> updatedUser = new HashMap<>();
         updatedUser.put("ChildNmae", childName);

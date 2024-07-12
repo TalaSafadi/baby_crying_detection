@@ -16,6 +16,7 @@
             android:id="@+id/textViewFeatures"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FEFEFE"
             android:padding="8dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             app:layout_constraintBottom_toBottomOf="parent"
