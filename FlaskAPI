@@ -1,0 +1,60 @@
+from flask import Flask, request, jsonify
+
+from ML import prepare_dataset, balance_dataset, train_model, save_model, load_model, extract_features_single
+# from MLMod import extract_features_single
+
+from flask import Flask
+from dotenv import load_dotenv
+import os
+
+load_dotenv('.env')  # This line loads environment variables from the .env file
+
+app = Flask(__name__)
+
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['DATABASE_URI'] = os.getenv('DATABASE_URI')
+config_name = os.environ.get('FLASK_CONFIG', 'DevelopmentConfig')
+app.config.from_object(f'config.{config_name}')
+
+
+
+
+
+model = None
+
+
+@app.route('/')
+def index():
+    return "Welcome to the ML Model API! Available routes: /train and /predict"
+
+
+@app.route('/train', methods=['POST'])
+def train():
+    global modelss
+    audio_dir = request.form['audio_dir']
+    df = prepare_dataset(audio_dir)
+    df_balanced = balance_dataset(df)
+    model, accuracy = train_model(df_balanced)
+    save_model(model)
+    return jsonify({'message': 'Model trained', 'accuracy': accuracy})
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    global model
+    if model is None:
+        model = load_model()
+    file = request.files['file']
+    file_path = f'temp_{file.filename}'
+    file.save(file_path)
+    features = extract_features_single(file_path)
+    X_single = features.reshape(1, -1)
+    predicted_label = model.predict(X_single)[0]
+    os.remove(file_path)
+    return jsonify({'label': predicted_label})
+
+
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
